@@ -1,0 +1,217 @@
+/* ==========================================================================
+   ANIMATION KEYFRAMES & UTILITY CLASSES
+   ========================================================================== */
+
+/* --- Floating Blobs Animation --- */
+@keyframes float-blob-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes float-blob-2 {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 40px) scale(0.9); }
+  66% { transform: translate(30px, -20px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes float-blob-3 {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(25px, 30px) scale(0.95); }
+  66% { transform: translate(-30px, -30px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.anim-blob-1 {
+  animation: float-blob-1 25s ease-in-out infinite;
+}
+
+.anim-blob-2 {
+  animation: float-blob-2 30s ease-in-out infinite;
+}
+
+.anim-blob-3 {
+  animation: float-blob-3 28s ease-in-out infinite;
+}
+
+/* --- Pulse Ambient Glow --- */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.anim-pulse-glow {
+  animation: pulse-glow 8s ease-in-out infinite;
+}
+
+/* --- Noise Grain Animation (Subtle drift to make it feel alive) --- */
+@keyframes noise-drift {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-1%, -1%); }
+  20% { transform: translate(-2%, 1%); }
+  30% { transform: translate(1%, -2%); }
+  40% { transform: translate(-1%, 3%); }
+  50% { transform: translate(-2%, 1%); }
+  60% { transform: translate(1%, 2%); }
+  70% { transform: translate(-2%, 1%); }
+  80% { transform: translate(2%, 1%); }
+  90% { transform: translate(-1%, -3%); }
+}
+
+.anim-noise-drift {
+  animation: noise-drift 8s steps(10) infinite;
+}
+
+/* --- Reusable Transition Animation Classes --- */
+.reveal-fade-up,
+.reveal-fade-down,
+.reveal-fade-left,
+.reveal-fade-right,
+.reveal-scale,
+.reveal-blur {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+}
+
+/* Hover Micro-animations */
+.hover-lift {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* --- Scroll Indicator Floating --- */
+@keyframes scroll-float {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(4px); opacity: 1; }
+}
+
+.scroll-indicator {
+  animation: scroll-float 2.5s ease-in-out infinite;
+}
+
+/* --- Rotating Background Ring & Orbit Labels --- */
+@keyframes spin-clockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counter-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.hero-rotate-bg {
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(59, 130, 246, 0.4);
+  animation: spin-clockwise 25s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-orbit-container {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  animation: spin-clockwise 30s linear infinite;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* 5 Rotating labels positioned along 360 / 5 = 72 degree steps */
+.orbit-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -16px;
+  margin-left: -60px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--primary);
+  color: var(--text-primary);
+  font-family: var(--font-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  pointer-events: auto;
+}
+
+/* Counter-rotate label text so text stays upright as the container spins */
+.orbit-label span {
+  display: inline-block;
+  animation: counter-rotate 30s linear infinite;
+}
+
+/* 5 positions around the 480px circle (radius ~ 240px) */
+.orbit-label-1 { transform: rotate(0deg) translate(240px) rotate(0deg); }
+.orbit-label-2 { transform: rotate(72deg) translate(240px) rotate(-72deg); }
+.orbit-label-3 { transform: rotate(144deg) translate(240px) rotate(-144deg); }
+.orbit-label-4 { transform: rotate(216deg) translate(240px) rotate(-216deg); }
+.orbit-label-5 { transform: rotate(288deg) translate(240px) rotate(-288deg); }
+
+@media (max-width: 768px) {
+  .hero-rotate-bg {
+    width: 320px;
+    height: 320px;
+  }
+  .hero-orbit-container {
+    width: 340px;
+    height: 340px;
+    animation: spin-clockwise 25s linear infinite;
+  }
+  .orbit-label {
+    padding: 4px 10px;
+    font-size: 0.6875rem;
+    margin-left: -45px;
+  }
+  .orbit-label span {
+    animation: counter-rotate 25s linear infinite;
+  }
+  .orbit-label-1 { transform: rotate(0deg) translate(170px) rotate(0deg); }
+  .orbit-label-2 { transform: rotate(72deg) translate(170px) rotate(-72deg); }
+  .orbit-label-3 { transform: rotate(144deg) translate(170px) rotate(-144deg); }
+  .orbit-label-4 { transform: rotate(216deg) translate(170px) rotate(-216deg); }
+  .orbit-label-5 { transform: rotate(288deg) translate(170px) rotate(-288deg); }
+}
+
+/* ==========================================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================================== */
+
+/* Respect the user's reduced-motion OS preference by disabling all
+   CSS animations and transitions that are purely decorative. GSAP 
+   animations are handled separately in js/animations.js via gsap.globalTimeline. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .anim-blob-1,
+  .anim-blob-2,
+  .anim-blob-3,
+  .anim-noise-drift,
+  .anim-pulse-glow,
+  .anim-spin,
+  .scroll-indicator {
+    animation: none !important;
+  }
+}

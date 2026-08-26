@@ -1,0 +1,103 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+
+/* --- 1920px and above (UHD Displays) --- */
+@media (min-width: 1920px) {
+  :root {
+    --container-width: 1600px;
+  }
+}
+
+/* --- 1600px Breakpoint (Extra Large Desktop) --- */
+@media (max-width: 1600px) {
+  :root {
+    --container-width: 1400px;
+  }
+}
+
+/* --- 1440px Breakpoint (Large Desktop) --- */
+@media (max-width: 1440px) {
+  :root {
+    --container-width: 1280px;
+  }
+}
+
+/* --- 1366px Breakpoint (Medium Laptop/Desktop) --- */
+@media (max-width: 1366px) {
+  :root {
+    --container-width: 1200px;
+  }
+}
+
+/* --- 1280px Breakpoint (Standard Laptop) --- */
+@media (max-width: 1280px) {
+  :root {
+    --container-width: 1140px;
+  }
+}
+
+/* --- 1024px Breakpoint (Tablet Landscape / Small Laptop) --- */
+@media (max-width: 1024px) {
+  :root {
+    --container-width: 960px;
+    --spacing-section: clamp(3rem, 6vw, 6rem);
+  }
+}
+
+/* --- 992px Breakpoint (Tablet Landscape / Navigation Shift) --- */
+@media (max-width: 992px) {
+  :root {
+    --container-width: 720px;
+  }
+  
+  .grid-cols-4, .grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* --- 768px Breakpoint (Tablet Portrait) --- */
+@media (max-width: 768px) {
+  :root {
+    --container-width: 100%;
+  }
+  
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- 576px Breakpoint (Mobile Landscape) --- */
+@media (max-width: 576px) {
+  :root {
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.5rem;
+    --spacing-xxl: 2rem;
+  }
+  
+  .grid-cols-3, .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- 480px Breakpoint (Standard Smartphone) --- */
+@media (max-width: 480px) {
+  :root {
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+  }
+}
+
+/* --- 390px Breakpoint (Compact iOS/Android Smartphones) --- */
+@media (max-width: 390px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* --- 360px Breakpoint (Minimum Width Boundary) --- */
+@media (max-width: 360px) {
+  body {
+    font-size: 14px;
+  }
+}

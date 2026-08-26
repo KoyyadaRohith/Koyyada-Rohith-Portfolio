@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koyyada Rohith | Cybersecurity Engineer & Founder of Cyber Black World</title>
+  
+  <!-- SEO & Metadata -->
+  <meta name="description" content="A luxury SaaS-style developer portfolio and digital garden. Inspired by Vercel, Stripe, and Apple.">
+  <meta name="author" content="Koyyada Rohith">
+  <meta name="theme-color" content="#05070B">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="My Portfolio Project | Premium Developer Portfolio">
+  <meta property="og:description" content="A luxury SaaS-style developer portfolio and digital garden. Inspired by Vercel, Stripe, and Apple.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+
+  <!-- Modular Stylesheets -->
+
+  <!-- Library CDNs (GSAP, GSAP ScrollTrigger, Lenis, Lucide) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.379.0/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Modular Scripts Entry -->
+  <script type="module" crossorigin src="/assets/index-DI-sQYKa.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-AJI448sA.css">
+</head>
+<body>
+
+  <!-- Skip To Main Content (Keyboard / Screen Reader Navigation) -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- ==========================================================================
+       BACKGROUND LAYER ENGINE
+       ========================================================================== -->
+  <div class="bg-wrapper" aria-hidden="true">
+    <!-- 1. Deep Navy background is handled via CSS var(--bg-primary) on .bg-wrapper -->
+    
+    <!-- 2. Mesh Gradient -->
+    <div class="bg-layer bg-layer--mesh"></div>
+    
+    <!-- 3. Noise Texture -->
+    <div class="bg-layer bg-layer--noise anim-noise-drift"></div>
+    
+    <!-- 4. Dot Grid -->
+    <div class="bg-layer bg-layer--grid"></div>
+    
+    <!-- 5. Blue Ambient Glow -->
+    <div class="bg-layer bg-layer--glow anim-pulse-glow"></div>
+    
+    <!-- 6. Floating Blobs -->
+    <div class="bg-layer bg-layer--blobs">
+      <div class="blob blob-1 anim-blob-1"></div>
+      <div class="blob blob-2 anim-blob-2"></div>
+      <div class="blob blob-3 anim-blob-3"></div>
+    </div>
+    
+    <!-- 7. Particles Canvas -->
+    <canvas id="particle-canvas" class="bg-layer bg-layer--particles"></canvas>
+  </div>
+
+  <!-- ==========================================================================
+       APPLICATION SHELL LAYOUT
+       ========================================================================== -->
+  <div id="app-layout">
+
+    <!-- Sticky Navigation Header -->
+    <header class="navbar" role="banner">
+      <div class="container">
+        
+        <!-- Logo -->
+        <a href="#" class="nav-logo" aria-label="My Portfolio Logo">
+          <i data-lucide="antigravity"></i>
+          <span>PORTFOLIO</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="nav-menu" role="navigation" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="#hero" class="nav-link">Home</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#startup" class="nav-link">Startup</a></li>
+            <li><a href="#blog" class="nav-link">Blog</a></li>
+            <li><a href="#certificates" class="nav-link">Certificates</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Navbar Actions (Theme Switch, Resume Link, Mobile toggle) -->
+        <div class="nav-actions">
+          
+          <!-- Theme Switcher Button -->
+          <button class="theme-switch-btn" aria-label="Toggle Theme" type="button">
+            <i data-lucide="sun-moon"></i>
+          </button>
+
+          <!-- Resume Button -->
+          <a href="#resume" class="btn btn-secondary btn-sm nav-resume-btn" aria-label="Download Resume">
+            <i data-lucide="download"></i>
+            <span>Resume</span>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="menu-toggle-btn" aria-label="Open navigation drawer" aria-expanded="false" aria-controls="mobile-drawer" type="button">
+            <i data-lucide="menu"></i>
+          </button>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer Overlay -->
+    <div class="nav-overlay" aria-hidden="true"></div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="nav-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <div class="drawer-header">
+        <span class="nav-logo">
+          <i data-lucide="antigravity"></i>
+          <span>MENU</span>
+        </span>
+        <button class="drawer-close-btn" aria-label="Close navigation drawer" type="button">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Links -->
+      <nav class="drawer-nav" role="navigation" aria-label="Mobile navigation">
+        <ul class="drawer-list">
+          <li><a href="#hero" class="drawer-link">Home</a></li>
+          <li><a href="#projects" class="drawer-link">Projects</a></li>
+          <li><a href="#about" class="drawer-link">About</a></li>
+          <li><a href="#skills" class="drawer-link">Skills</a></li>
+          <li><a href="#experience" class="drawer-link">Experience</a></li>
+          <li><a href="#startup" class="drawer-link">Startup</a></li>
+          <li><a href="#blog" class="drawer-link">Blog</a></li>
+          <li><a href="#certificates" class="drawer-link">Certificates</a></li>
+          <li><a href="#contact" class="drawer-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Drawer Footer -->
+      <div class="drawer-footer">
+        <!-- Resume download button inside mobile drawer -->
+        <button class="btn btn-primary" style="width: 100%;" aria-label="Download Resume" type="button">
+          <i data-lucide="download"></i>
+          <span>Resume</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main id="main-content" role="main">
+      
+      <!-- ==========================================================================
+           HERO SECTION
+           ========================================================================== -->
+      <section id="hero" class="hero-section section hero">
+        <div class="container hero-grid">
+          
+          <!-- Left Content -->
+          <div class="hero-content">
+            <div class="hero-badge reveal-fade-up">
+              <span>Cybersecurity Enthusiast</span>
+              <span class="badge-dot">•</span>
+              <span>SOC in Training</span>
+              <span class="badge-dot">•</span>
+              <span>B.Tech CSE</span>
+            </div>
+            
+            <h1 class="hero-title">
+              <span class="hero-line"><span class="hero-line-inner">KOYYADA ROHITH</span></span>
+              <span class="hero-line"><span class="hero-line-inner text-accent">Building Cyber Black World</span></span>
+              <span class="hero-line"><span class="hero-line-inner">An AI-Powered Cybersecurity Ecosystem</span></span>
+            </h1>
+
+            <p class="hero-subtitle reveal-fade-up">
+              Cybersecurity Engineer, SOC Analyst in Training, and Founder of Cyber Black World. Specializing in threat intelligence, network security, AI-assisted defense, and full-stack web engineering.
+            </p>
+
+            <div class="hero-ctas reveal-fade-up">
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore My Work</span>
+                <i data-lucide="arrow-right"></i>
+              </a>
+              <a href="assets/docs/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <i data-lucide="download"></i>
+                <span>Download Resume</span>
+              </a>
+              <a href="#contact" class="btn btn-outline">
+                <i data-lucide="mail"></i>
+                <span>Contact Me</span>
+              </a>
+            </div>
+
+            <div class="hero-socials reveal-fade-up" aria-label="Social connections">
+              <a href="https://github.com/KoyyadaRohith" class="social-link" aria-label="GitHub Profile" target="_blank" rel="noopener noreferrer" title="GitHub">
+                <i data-lucide="github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/koyyada-rohith-72bb82372/" class="social-link" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <i data-lucide="linkedin"></i>
+              </a>
+              <a href="mailto:koyyadarohith25@gmail.com" class="social-link" aria-label="Email Address" title="Email">
+                <i data-lucide="mail"></i>
+              </a>
+              <a href="https://x.com/Mr_Rohith43" class="social-link" aria-label="X Profile" target="_blank" rel="noopener noreferrer" title="X (Twitter)">
+                <i data-lucide="twitter"></i>
+              </a>
+            </div>
+
+            <!-- Statistics Grid -->
+            <div class="hero-stats reveal-fade-up">
+              <div class="metric-card card card-glass">
+                <div class="metric-val" data-target="15" data-suffix="+">15+</div>
+                <div class="metric-label">Security Projects</div>
+              </div>
+              <div class="metric-card card card-glass">
+                <div class="metric-val" data-target="10" data-suffix="+">10+</div>
+                <div class="metric-label">Certifications</div>
+              </div>
+              <div class="metric-card card card-glass">
+                <div class="metric-val" data-target="3" data-suffix="+">3+</div>
+                <div class="metric-label">Internships / Roles</div>
+              </div>
+              <div class="metric-card card card-glass">
+                <div class="metric-val" data-target="100" data-suffix="%">100%</div>
+                <div class="metric-label">Commitment</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Visual: HUD & 5 Badges -->
+          <div class="hero-visual reveal-scale">
+            <div class="visual-glow glow-blue anim-pulse-glow" data-depth="0.10"></div>
+            <div class="visual-glow glow-cyan" data-depth="0.18"></div>
+
+            <div class="hero-image-container glass-card" data-depth="0.08">
+              <div class="image-gradient-mesh"></div>
+              
+              <!-- 5 Badges positioning -->
+              <div class="star-badge badge-top">🛡 Threat Intelligence</div>
+              <div class="star-badge badge-left">🌐 Network Security</div>
+              <div class="star-badge badge-right">🤖 AI Security</div>
+              <div class="star-badge badge-bottom-left">🚀 Cyber Black World</div>
+              <div class="star-badge badge-bottom-right">💡 Security Innovation</div>
+
+              <!-- Portrait Image -->
+              <img src="/assets/portrait-DGC6uE45.jpg" alt="Koyyada Rohith" class="portrait-img" onerror="this.src='assets/profile/portrait.png'" />
+              
+              <div class="corner-decor border-top-left"></div>
+              <div class="corner-decor border-bottom-right"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="hero-scroll-wrapper">
+          <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+            <span>Discover Story</span>
+            <i data-lucide="chevron-down"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           PROJECTS SECTION
+           ========================================================================== -->
+      <section id="projects" class="section projects-section">
+        <div class="container">
+          
+          <!-- Section Header -->
+          <div class="section-header reveal-fade-up">
+            <span class="section-subtitle">Portfolio</span>
+            <h2 class="section-title">Featured Engineering Work</h2>
+            <p class="section-description">A curated selection of security tools, machine learning engines, and software platforms built to enterprise product standards.</p>
+          </div>
+
+          <!-- Filters Control Dashboard -->
+          <div class="projects-filters reveal-fade-up">
+            
+            <!-- Row 1: Search and Categories -->
+            <div class="filters-main-row">
+              <div class="search-box-wrap">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="project-search" placeholder="Search projects by title, stack, or category..." aria-label="Search projects">
+                <button id="search-clear-btn" aria-label="Clear search" type="button"><i data-lucide="x"></i></button>
+              </div>
+
+              <div class="category-tabs" role="tablist" aria-label="Project categories">
+                <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="projects-grid-root" data-category="all" type="button">All</button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="projects-grid-root" data-category="cybersecurity" type="button">Cybersecurity</button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="projects-grid-root" data-category="ai" type="button">AI</button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="projects-grid-root" data-category="web" type="button">Web</button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="projects-grid-root" data-category="mobile" type="button">Mobile</button>
+              </div>
+            </div>
+
+            <!-- Row 2: Advanced Dropdowns -->
+            <div class="filters-advanced-row">
+              <span class="filters-label">Refine By:</span>
+              <div class="dropdown-filters-wrap">
+                
+                <!-- Technology Dropdown -->
+                <div class="filter-dropdown">
+                  <select id="filter-tech" aria-label="Filter by technology">
+                    <option value="all">All Technologies</option>
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="node.js">Node.js</option>
+                    <option value="react">React</option>
+                    <option value="linux">Linux</option>
+                    <option value="git">Git</option>
+                    <option value="mysql">MySQL</option>
+                  </select>
+                </div>
+
+                <!-- Status Dropdown -->
+                <div class="filter-dropdown">
+                  <select id="filter-status" aria-label="Filter by status">
+                    <option value="all">All Statuses</option>
+                    <option value="live">Live</option>
+                    <option value="beta">Beta</option>
+                    <option value="research">Research</option>
+                  </select>
+                </div>
+
+                <!-- Difficulty Dropdown -->
+                <div class="filter-dropdown">
+                  <select id="filter-difficulty" aria-label="Filter by difficulty">
+                    <option value="all">All Levels</option>
+                    <option value="advanced">Advanced</option>
+                    <option value="intermediate">Intermediate</option>
+                  </select>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Projects Container -->
+          <div class="projects-grid-container" id="projects-grid-root">
+            
+            <!-- Flagship Project Card Slot -->
+            <div id="flagship-project-slot"></div>
+            
+            <!-- Grid Projects Cards Slot -->
+            <div id="grid-projects-slot" class="grid-projects-container"></div>
+            
+            <!-- Empty Search State Card -->
+            <div id="empty-search-state" class="empty-state-card card card-glass" style="display: none;">
+              <div class="empty-illustration">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="50" cy="50" r="30" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" class="empty-circle"/>
+                  <path d="M70 70L85 85" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M45 42H55" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M42 50H58" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="empty-title">No matching projects found.</h3>
+              <p class="empty-desc">We couldn't find any projects matching your search term or active filters. Try resetting the criteria.</p>
+              <button id="reset-filters-btn" class="btn btn-secondary" type="button">
+                <i data-lucide="refresh-cw"></i>
+                <span>Reset Filters</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Section CTA Block -->
+          <div class="projects-cta reveal-fade-up">
+            <h3 class="projects-cta-title">Interested in reading more code bases?</h3>
+            <div class="projects-cta-buttons">
+              <a href="#projects" class="btn btn-gradient">
+                <span>Explore Engineering Portfolio</span>
+                <i data-lucide="arrow-right"></i>
+              </a>
+              <a href="https://github.com" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="github"></i>
+                <span>GitHub Profiles</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           ABOUT SECTION
+           ========================================================================== -->
+      <section id="about" class="section about-section">
+        <div class="container">
+          
+          <!-- Section Header -->
+          <div class="section-header reveal-fade-up">
+            <span class="section-subtitle">About Founder</span>
+            <h2 class="section-title">The Engineering Story</h2>
+            <p class="section-description">A multidisciplinary look into the philosophies, milestones, and core values driving my development journey.</p>
+          </div>
+
+          <!-- Profile Biography Grid -->
+          <div class="about-grid">
+            
+            <!-- Left Visual (45%) -->
+            <div class="about-visual reveal-scale">
+              <div class="profile-showcase glass-card">
+                <!-- Glowing ambient backlight halos -->
+                <div class="profile-glow glow-blue anim-pulse-glow"></div>
+                <div class="profile-glow glow-cyan"></div>
+                
+                <!-- Background visual mesh -->
+                <div class="profile-mesh"></div>
+                
+                <!-- SVG Vector Silhouette Placeholder -->
+                <div class="profile-portrait-placeholder">
+                  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="38" r="18" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-opacity="0.15" stroke-width="1"/>
+                    <path d="M20 85C20 68.4315 33.4315 55 50 55C66.5685 55 80 68.4315 80 85" stroke="currentColor" stroke-opacity="0.15" stroke-width="1.5" fill="currentColor" fill-opacity="0.08"/>
+                  </svg>
+                </div>
+
+                <!-- Floating Gradient Accents -->
+                <div class="floating-accent accent-top-right"></div>
+                <div class="floating-accent accent-bottom-left"></div>
+                
+                <!-- Corner details -->
+                <div class="corner-decor border-top-left"></div>
+                <div class="corner-decor border-bottom-right"></div>
+              </div>
+            </div>
+
+            <!-- Right Content (55%) -->
+            <div class="about-content reveal-fade-up">
+              <h3 class="bio-headline">Merging Cybersecurity Protocol with Machine Learning Inference.</h3>
+              
+              <div class="bio-narrative">
+                <div class="bio-block">
+                  <span class="bio-block-label">Introduction</span>
+                  <p class="bio-block-text">I am an autonomous software engineering designer dedicated to deploying secure, intelligent systems at scale. By combining zero-trust compliance standards with dynamic server frameworks, I construct digital platforms that remain highly resistant to modern threat vectors.</p>
+                </div>
+                
+                <div class="bio-block">
+                  <span class="bio-block-label">Our Mission</span>
+                  <p class="bio-block-text">To push the boundaries of modern computing by developing robust open-source tools, machine learning pipelines, and security protocols that empower developer ecosystems globally while maintaining top-tier architectural integrity.</p>
+                </div>
+
+                <div class="bio-block">
+                  <span class="bio-block-label">Our Vision</span>
+                  <p class="bio-block-text">A decentralized web ecosystem where cryptographic zero-trust validation is seamlessly integrated into every API request, supported by local edge-computing neural accelerators operating with zero latency.</p>
+                </div>
+
+                <div class="bio-block">
+                  <span class="bio-block-label">Engineering Philosophy</span>
+                  <p class="bio-block-text">Build for failure first. Assume all networks are compromised, all inputs are malicious, and all cache nodes are untrusted. This mindset yields codebase footprints that are resilient, self-healing, and secure by design.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Journey Timeline (Alternating layout on desktop) -->
+          <div class="timeline-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Trajectory</span>
+              <h3 class="section-title">Key Milestones</h3>
+            </div>
+
+            <div class="timeline-container">
+              <!-- Central vertical drawing track -->
+              <div class="timeline-line">
+                <div class="timeline-line-progress"></div>
+              </div>
+
+              <!-- Milestone 1 (Left) -->
+              <div class="timeline-item timeline-item--left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-item-inner card card-glass">
+                  <div class="timeline-meta">
+                    <span class="timeline-year">2026</span>
+                    <div class="timeline-icon-wrap"><i data-lucide="shield"></i></div>
+                  </div>
+                  <h4 class="timeline-title">Zero-Trust Infrastructure</h4>
+                  <p class="timeline-desc">Designed cloud SIEM logs streams mapping eBPF telemetry filters across distributed virtualization clusters.</p>
+                </div>
+              </div>
+
+              <!-- Milestone 2 (Right) -->
+              <div class="timeline-item timeline-item--right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-item-inner card card-glass">
+                  <div class="timeline-meta">
+                    <span class="timeline-year">2025</span>
+                    <div class="timeline-icon-wrap"><i data-lucide="cpu"></i></div>
+                  </div>
+                  <h4 class="timeline-title">AI Pipeline Optimization</h4>
+                  <p class="timeline-desc">Engineered custom neural pipeline wrappers caching model weights on edge devices utilizing ONNX runtimes.</p>
+                </div>
+              </div>
+
+              <!-- Milestone 3 (Left) -->
+              <div class="timeline-item timeline-item--left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-item-inner card card-glass">
+                  <div class="timeline-meta">
+                    <span class="timeline-year">2024</span>
+                    <div class="timeline-icon-wrap"><i data-lucide="server"></i></div>
+                  </div>
+                  <h4 class="timeline-title">SaaS System Core Design</h4>
+                  <p class="timeline-desc">Built collaborative Kanban pipelines with WebSocket sync engines and transactional database backups.</p>
+                </div>
+              </div>
+
+              <!-- Milestone 4 (Right) -->
+              <div class="timeline-item timeline-item--right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-item-inner card card-glass">
+                  <div class="timeline-meta">
+                    <span class="timeline-year">2023</span>
+                    <div class="timeline-icon-wrap"><i data-lucide="terminal"></i></div>
+                  </div>
+                  <h4 class="timeline-title">Linux Kernel Telemetry</h4>
+                  <p class="timeline-desc">Programmed low-level socket monitors tracing system call hooks to diagnose interface bottlenecks.</p>
+                </div>
+              </div>
+
+              <!-- Milestone 5 (Left) -->
+              <div class="timeline-item timeline-item--left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-item-inner card card-glass">
+                  <div class="timeline-meta">
+                    <span class="timeline-year">2022</span>
+                    <div class="timeline-icon-wrap"><i data-lucide="code-2"></i></div>
+                  </div>
+                  <h4 class="timeline-title">Algorithm Engineering Start</h4>
+                  <p class="timeline-desc">Initialized basic networking scripts, data structure implementations, and version control configurations.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Achievements Metrics Counters -->
+          <div class="achievements-section reveal-fade-up">
+            <div class="achievements-grid">
+              
+              <!-- Metric 1 -->
+              <div class="achievement-card card card-glass">
+                <div class="achievement-header">
+                  <i data-lucide="award"></i>
+                  <span class="achievement-number"><span class="counter" data-target="12">0</span>+</span>
+                </div>
+                <h4 class="achievement-title">Completed Frameworks</h4>
+                <p class="achievement-desc">Production-grade software platforms, network tools, and security packages deployed globally.</p>
+              </div>
+
+              <!-- Metric 2 -->
+              <div class="achievement-card card card-glass">
+                <div class="achievement-header">
+                  <i data-lucide="shield-check"></i>
+                  <span class="achievement-number"><span class="counter" data-target="150">0</span>+</span>
+                </div>
+                <h4 class="achievement-title">Resolved Vulnerabilities</h4>
+                <p class="achievement-desc">Security vulnerabilities tracked, resolved, and patched across various developer code repositories.</p>
+              </div>
+
+              <!-- Metric 3 -->
+              <div class="achievement-card card card-glass">
+                <div class="achievement-header">
+                  <i data-lucide="book-open"></i>
+                  <span class="achievement-number"><span class="counter" data-target="4">0</span></span>
+                </div>
+                <h4 class="achievement-title">Research Areas</h4>
+                <p class="achievement-desc">Active investigations in zero-knowledge proofs, edge model inference, and eBPF kernel tracking.</p>
+              </div>
+
+              <!-- Metric 4 -->
+              <div class="achievement-card card card-glass">
+                <div class="achievement-header">
+                  <i data-lucide="hourglass"></i>
+                  <span class="achievement-number"><span class="counter" data-target="3600">0</span>+</span>
+                </div>
+                <h4 class="achievement-title">Development Hours</h4>
+                <p class="achievement-desc">Dedicated engineering, profiling, and hardening in secure sandbox environments.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Education Timeline Cards -->
+          <div class="education-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Credentials</span>
+              <h3 class="section-title">Academic Timeline</h3>
+            </div>
+
+            <div class="education-grid">
+              
+              <!-- Education Card 1 -->
+              <div class="education-card card card-glass">
+                <div class="education-meta">
+                  <span class="education-duration">2024 - 2026</span>
+                  <span class="badge badge-status">In Progress</span>
+                </div>
+                <h4 class="education-program">Master of Science in Cybersecurity</h4>
+                <span class="education-institution">Placeholder Technological University</span>
+                <p class="education-desc">Advanced analysis in binary analysis, secure network layers design, cryptographic handshake patterns, and virtualization cluster security management.</p>
+              </div>
+
+              <!-- Education Card 2 -->
+              <div class="education-card card card-glass">
+                <div class="education-meta">
+                  <span class="education-duration">2020 - 2024</span>
+                  <span class="badge badge-status completed">Completed</span>
+                </div>
+                <h4 class="education-program">Bachelor of Technology in Computer Science</h4>
+                <span class="education-institution">Placeholder State University of Engineering</span>
+                <p class="education-desc">Foundational training in data structures, relational database mapping (SQL), assembly languages, networking layers, and software design principles.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Core Values -->
+          <div class="values-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Principles</span>
+              <h3 class="section-title">Core Philosophies</h3>
+            </div>
+
+            <div class="values-grid">
+              
+              <!-- Value 1: Innovation -->
+              <div class="value-card card card-glass">
+                <div class="value-icon-wrap"><i data-lucide="lightbulb"></i></div>
+                <h4 class="value-title">Constant Innovation</h4>
+                <p class="value-desc">Pioneering modular code configurations, integrating cutting-edge libraries, and experimenting with beta runtimes before they go mainstream.</p>
+              </div>
+
+              <!-- Value 2: Security -->
+              <div class="value-card card card-glass">
+                <div class="value-icon-wrap"><i data-lucide="lock"></i></div>
+                <h4 class="value-title">Absolute Security</h4>
+                <p class="value-desc">Enforcing strict input bounds, encrypting cache channels, and auditing deployment configs to avoid single points of security failure.</p>
+              </div>
+
+              <!-- Value 3: Learning -->
+              <div class="value-card card card-glass">
+                <div class="value-icon-wrap"><i data-lucide="graduation-cap"></i></div>
+                <h4 class="value-title">Continuous Learning</h4>
+                <p class="value-desc">Reading kernel logs, tracking white papers, studying vulnerabilities databases, and building sandbox tests to keep competencies sharp.</p>
+              </div>
+
+              <!-- Value 4: Leadership -->
+              <div class="value-card card card-glass">
+                <div class="value-icon-wrap"><i data-lucide="users"></i></div>
+                <h4 class="value-title">Technical Leadership</h4>
+                <p class="value-desc">Publishing reference templates, writing detailed architectural docs, mentoring peers, and leading robust architectural discussions.</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Call To Action -->
+          <div class="about-cta reveal-fade-up">
+            <div class="about-cta-panel card card-glass">
+              <div class="cta-mesh"></div>
+              <h3 class="about-cta-title">Collaborate on Enterprise Solutions</h3>
+              <p class="about-cta-desc">Whether you need an automated deployment pipeline, a hardened network firewall, or a low-latency model server, let's connect and architect it together.</p>
+              <div class="about-cta-buttons">
+                <a href="#about" class="btn btn-gradient">
+                  <i data-lucide="download"></i>
+                  <span>Download Resume</span>
+                </a>
+                <a href="#about" class="btn btn-secondary">
+                  <i data-lucide="mail"></i>
+                  <span>Contact Me</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SKILLS & TECHNOLOGY ECOSYSTEM SECTION
+           ========================================================================== -->
+      <section id="skills" class="section skills-section">
+        <div class="container">
+          
+          <!-- Section Header -->
+          <div class="section-header reveal-fade-up">
+            <span class="section-subtitle">Expertise</span>
+            <h2 class="section-title">Technology Ecosystem</h2>
+            <p class="section-description">A map of frameworks, databases, security tools, and deployment environments structured by core competencies.</p>
+          </div>
+
+          <!-- Skill Categories Grid (6 Cards) -->
+          <div class="skills-categories-grid reveal-fade-up" id="skills-categories-root">
+            <!-- Dynamically populated categories -->
+          </div>
+
+          <!-- Ecosystem Filters & Technology Grid -->
+          <div class="ecosystem-container reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Ecosystem</span>
+              <h3 class="section-title">Core Technologies</h3>
+            </div>
+
+            <!-- Filter chips -->
+            <div class="skills-filter-chips" role="tablist" aria-label="Technology filters">
+              <button class="filter-chip-btn is-active" role="tab" aria-selected="true" aria-controls="skills-tech-grid" data-filter="all" type="button">All</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="skills-tech-grid" data-filter="frontend" type="button">Frontend</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="skills-tech-grid" data-filter="backend" type="button">Backend</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="skills-tech-grid" data-filter="cybersecurity" type="button">Cybersecurity</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="skills-tech-grid" data-filter="ai" type="button">AI</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="skills-tech-grid" data-filter="cloud" type="button">Cloud</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="skills-tech-grid" data-filter="tools" type="button">Tools</button>
+            </div>
+
+            <!-- Dynamic Technology Cards Grid -->
+            <div class="skills-tech-grid" id="skills-tech-root" role="tabpanel" id="skills-tech-grid">
+              <!-- Dynamically populated technologies -->
+            </div>
+          </div>
+
+          <!-- Development Tools Stack -->
+          <div class="tools-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Stack</span>
+              <h3 class="section-title">Development Tools</h3>
+            </div>
+
+            <div class="tools-grid" id="skills-tools-root">
+              <!-- Dynamically populated tools -->
+            </div>
+          </div>
+
+          <!-- Continuous Learning Roadmap (Horizontal/Vertical) -->
+          <div class="roadmap-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Roadmap</span>
+              <h3 class="section-title">Continuous Learning</h3>
+            </div>
+
+            <div class="roadmap-container-outer">
+              <div class="roadmap-track-container" id="skills-roadmap-root">
+                <!-- Dynamically populated roadmap milestones -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills Call To Action -->
+          <div class="skills-cta reveal-fade-up">
+            <div class="skills-cta-panel card card-glass">
+              <div class="cta-mesh"></div>
+              <h3 class="skills-cta-title">Explore Detailed Engineering Roles</h3>
+              <p class="skills-cta-desc">Review full-time and contract achievements records, startup initiatives, and security audits documented in the experience timeline.</p>
+              <div class="skills-cta-buttons">
+                <a href="#skills" class="btn btn-gradient">
+                  <span>View Experience</span>
+                  <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#skills" class="btn btn-secondary">
+                  <i data-lucide="download"></i>
+                  <span>Download Resume</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           EXPERIENCE & CAREER TIMELINE SECTION
+           ========================================================================== -->
+      <section id="experience" class="section experience-section">
+        <div class="container">
+
+          <!-- Section Header -->
+          <div class="section-header reveal-fade-up">
+            <span class="section-subtitle">Journey</span>
+            <h2 class="section-title">Professional Development</h2>
+            <p class="section-description">A timeline tracing security roles, academic infrastructure research, and distributed engineering initiatives.</p>
+          </div>
+
+          <!-- Career Timeline (Alternating Milestones) -->
+          <div class="career-timeline-container reveal-fade-up">
+            <div class="career-timeline-line">
+              <div class="career-timeline-line-progress"></div>
+            </div>
+            
+            <div class="career-timeline-items" id="career-timeline-root">
+              <!-- Dynamically populated career milestones -->
+            </div>
+          </div>
+
+          <!-- Featured Experience Cards -->
+          <div class="featured-experience-container reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Roles</span>
+              <h3 class="section-title">Featured Collaborations</h3>
+            </div>
+
+            <div class="experience-cards-grid" id="experience-cards-root">
+              <!-- Dynamically populated experience cards -->
+            </div>
+          </div>
+
+          <!-- Achievement Metrics Summary -->
+          <div class="experience-metrics-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Impact</span>
+              <h3 class="section-title">Achievements Record</h3>
+            </div>
+
+            <div class="experience-metrics-grid" id="experience-metrics-root">
+              <!-- Dynamically populated metric cards -->
+            </div>
+          </div>
+
+          <!-- Professional Highlights -->
+          <div class="highlights-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Highlights</span>
+              <h3 class="section-title">Technical Milestones</h3>
+            </div>
+
+            <div class="highlights-grid" id="experience-highlights-root">
+              <!-- Dynamically populated highlights -->
+            </div>
+          </div>
+
+          <!-- Closing CTA Panel -->
+          <div class="experience-cta reveal-fade-up">
+            <div class="experience-cta-panel card card-glass">
+              <div class="cta-mesh"></div>
+              <h3 class="experience-cta-title">Interested in Collaborative Ventures?</h3>
+              <p class="experience-cta-desc">Download the complete technical resume summarizing virtual infrastructure setups or view my latest startup sandbox releases.</p>
+              <div class="experience-cta-buttons">
+                <a href="#experience" class="btn btn-gradient">
+                  <span>View Startup</span>
+                  <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#experience" class="btn btn-secondary">
+                  <i data-lucide="download"></i>
+                  <span>Download Resume</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           STARTUP VENTURE LANDING EXPERIENCE
+           ========================================================================== -->
+      <section id="startup" class="section startup-section">
+        <div class="container">
+
+          <!-- Section Header -->
+          <div class="section-header reveal-fade-up">
+            <span class="section-subtitle">Venture</span>
+            <h2 class="section-title">Startup Initiative</h2>
+            <p class="section-description">An enterprise dashboard introducing localized zero-trust proxies and model compilation platforms.</p>
+          </div>
+
+          <!-- Startup Hero Split Grid (45% Content / 55% Visual) -->
+          <div class="startup-hero-grid reveal-fade-up">
+            
+            <!-- 45% Content Column -->
+            <div class="startup-hero-content">
+              <div class="startup-brand-header">
+                <div class="startup-logo-wrap">
+                  <i data-lucide="orbit"></i>
+                </div>
+                <span class="startup-brand-name">Nexus Security Platform</span>
+              </div>
+              <h3 class="startup-hero-tagline">Automating Virtual Sandbox Isolation Limits</h3>
+              <p class="startup-hero-desc">Our distributed micro-proxy analyzes system socket buffers and isolates memory tables to secure servers against kernel telemetry leaks automatically.</p>
+              <div class="startup-hero-actions">
+                <a href="#startup" class="btn btn-gradient">
+                  <span>Explore Products</span>
+                  <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#startup" class="btn btn-secondary">
+                  <i data-lucide="play"></i>
+                  <span>Watch Sandbox Demo</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- 55% Visual Canvas Column -->
+            <div class="startup-hero-visual">
+              <div class="startup-visual-container card card-glass">
+                <div class="startup-visual-mesh"></div>
+                <div class="startup-visual-glow"></div>
+                
+                <!-- Floating diagram outlines -->
+                <div class="startup-floating-diagram">
+                  <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="200" cy="150" r="80" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="4 4" class="orbit-circle-slow" />
+                    <circle cx="200" cy="150" r="120" stroke="var(--accent)" stroke-width="1" stroke-dasharray="6 6" class="orbit-circle-fast" />
+                    
+                    <!-- Nodes -->
+                    <circle cx="200" cy="150" r="12" fill="var(--bg-secondary)" stroke="var(--primary)" stroke-width="2" />
+                    <circle cx="120" cy="150" r="8" fill="var(--bg-secondary)" stroke="var(--accent)" stroke-width="1.5" />
+                    <circle cx="280" cy="150" r="8" fill="var(--bg-secondary)" stroke="var(--accent)" stroke-width="1.5" />
+                    <circle cx="200" cy="70" r="8" fill="var(--bg-secondary)" stroke="var(--primary)" stroke-width="1.5" />
+                    <circle cx="200" cy="230" r="8" fill="var(--bg-secondary)" stroke="var(--primary)" stroke-width="1.5" />
+                    
+                    <!-- Lines connecting -->
+                    <path d="M200 82 V138 M200 162 V222 M128 150 H188 M212 150 H272" stroke="var(--border-color)" stroke-width="1" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Vision & Mission Feature Panels -->
+          <div class="startup-vision-mission reveal-fade-up" id="startup-vision-root">
+            <!-- Dynamically populated vision and mission -->
+          </div>
+
+          <!-- Product Ecosystem Grid -->
+          <div class="startup-products-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Ecosystem</span>
+              <h3 class="section-title">Product Ecosystem</h3>
+            </div>
+
+            <div class="startup-products-grid" id="startup-products-root">
+              <!-- Dynamically populated products with varying hierarchy scales -->
+            </div>
+          </div>
+
+          <!-- Innovation Highlights Grid -->
+          <div class="startup-innovation-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Innovation</span>
+              <h3 class="section-title">Technology Breakthroughs</h3>
+            </div>
+
+            <div class="startup-innovation-grid" id="startup-innovation-root">
+              <!-- Dynamically populated highlights -->
+            </div>
+          </div>
+
+          <!-- Roadmap Timeline (Swapping Horizontal/Vertical) -->
+          <div class="startup-roadmap-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Horizon</span>
+              <h3 class="section-title">Venture Roadmap</h3>
+            </div>
+
+            <div class="startup-roadmap-container-outer">
+              <div class="startup-roadmap-track-container" id="startup-roadmap-root">
+                <!-- Dynamically populated roadmap milestones -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Closing CTA Glass Panel -->
+          <div class="startup-cta reveal-fade-up">
+            <div class="startup-cta-panel card card-glass">
+              <div class="cta-mesh"></div>
+              <div class="cta-pulse-glow"></div>
+              <h3 class="startup-cta-title">Collaborate on Enterprise Prototypes</h3>
+              <p class="startup-cta-desc">Reach out to audit host kernel configurations, request secure compilation tokens, or discuss seed venture participation.</p>
+              <div class="startup-cta-buttons">
+                <a href="#startup" class="btn btn-gradient">
+                  <span>Explore Sandbox</span>
+                  <i data-lucide="orbit"></i>
+                </a>
+                <a href="#startup" class="btn btn-secondary">
+                  <i data-lucide="mail"></i>
+                  <span>Contact Founder</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           BLOG & RESEARCH JOURNAL SECTION
+           ========================================================================== -->
+      <section id="blog" class="section blog-section">
+        <div class="container">
+
+          <!-- Section Header -->
+          <div class="section-header reveal-fade-up">
+            <span class="section-subtitle">Journal</span>
+            <h2 class="section-title">Engineering Insights</h2>
+            <p class="section-description">Technical archives, security audits, and system engineering tutorials covering distributed architectures.</p>
+          </div>
+
+          <!-- Featured Article Panel (50/50 Desktop Split) -->
+          <div class="blog-featured-container reveal-fade-up" id="blog-featured-root">
+            <!-- Dynamically populated featured article -->
+          </div>
+
+          <!-- Filters Chips Categories -->
+          <div class="blog-feed-container reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Feed</span>
+              <h3 class="section-title">Latest Articles</h3>
+            </div>
+
+            <!-- Categories filters -->
+            <div class="blog-filter-chips" role="tablist" aria-label="Article categories">
+              <button class="filter-chip-btn is-active" role="tab" aria-selected="true" aria-controls="blog-articles-grid" data-filter="all" type="button">All</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="blog-articles-grid" data-filter="cybersecurity" type="button">Cybersecurity</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="blog-articles-grid" data-filter="ai" type="button">AI</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="blog-articles-grid" data-filter="webdev" type="button">Web Dev</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="blog-articles-grid" data-filter="cloud" type="button">Cloud</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="blog-articles-grid" data-filter="research" type="button">Research</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="blog-articles-grid" data-filter="tutorials" type="button">Tutorials</button>
+            </div>
+
+            <!-- Dynamic Articles Grid -->
+            <div class="blog-articles-grid" id="blog-articles-root" role="tabpanel" id="blog-articles-grid">
+              <!-- Dynamically populated articles -->
+            </div>
+          </div>
+
+          <!-- Reading Statistics -->
+          <div class="blog-statistics-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Metrics</span>
+              <h3 class="section-title">Reading Statistics</h3>
+            </div>
+
+            <div class="blog-statistics-grid" id="blog-stats-root">
+              <!-- Dynamically populated statistic cards -->
+            </div>
+          </div>
+
+          <!-- Newsletter Subscription Closing CTA -->
+          <div class="newsletter-cta reveal-fade-up">
+            <div class="newsletter-cta-panel card card-glass">
+              <div class="cta-mesh"></div>
+              <div class="newsletter-pulse-glow"></div>
+              
+              <div class="newsletter-panel-content">
+                <div class="newsletter-icon-wrap">
+                  <i data-lucide="mail-open"></i>
+                </div>
+                <h3 class="newsletter-cta-title">Subscribe to the Engineering Digest</h3>
+                <p class="newsletter-cta-desc">Get the latest technical research briefs, system security audits, and infrastructure tutorials delivered straight to your mailbox.</p>
+                
+                <!-- Email subscription input form -->
+                <form class="newsletter-form" id="newsletter-form-element" novalidate>
+                  <div class="newsletter-form-group">
+                    <label for="newsletter-email" class="sr-only">Email Address</label>
+                    <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Enter your email address" required aria-required="true" autocomplete="email" />
+                    <button type="submit" class="btn btn-gradient btn-subscribe" id="newsletter-submit-btn">
+                      <span>Subscribe</span>
+                      <i data-lucide="send"></i>
+                    </button>
+                  </div>
+                  <div class="newsletter-feedback-msg" id="newsletter-feedback" aria-live="polite"></div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           CERTIFICATES & ACHIEVEMENTS EXPERIENCE
+           ========================================================================== -->
+      <section id="certificates" class="section certificates-section">
+        <div class="container">
+
+          <!-- Section Header -->
+          <div class="section-header reveal-fade-up">
+            <span class="section-subtitle">Credentials</span>
+            <h2 class="section-title">Certifications & Milestones</h2>
+            <p class="section-description">A curated index validating core low-level system designs, zero-trust cloud network architectures, and neural compilers.</p>
+          </div>
+
+          <!-- Featured Certification Panel (50/50 Desktop Split) -->
+          <div class="featured-credential-container reveal-fade-up" id="featured-credential-root">
+            <!-- Dynamically populated featured credential -->
+          </div>
+
+          <!-- Credential Categories & Gallery -->
+          <div class="credentials-gallery-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Showcase</span>
+              <h3 class="section-title">Verified Qualifications</h3>
+            </div>
+
+            <!-- Categories filter chips -->
+            <div class="credentials-filter-chips" role="tablist" aria-label="Credentials categories">
+              <button class="filter-chip-btn is-active" role="tab" aria-selected="true" aria-controls="credentials-grid" data-filter="all" type="button">All</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="credentials-grid" data-filter="cybersecurity" type="button">Cybersecurity</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="credentials-grid" data-filter="cloud" type="button">Cloud</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="credentials-grid" data-filter="ai" type="button">AI</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="credentials-grid" data-filter="programming" type="button">Programming</button>
+              <button class="filter-chip-btn" role="tab" aria-selected="false" aria-controls="credentials-grid" data-filter="networking" type="button">Networking</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="credentials-grid" id="credentials-grid-root" role="tabpanel" id="credentials-grid">
+              <!-- Dynamically populated credential cards -->
+            </div>
+          </div>
+
+          <!-- Achievement Statistics -->
+          <div class="achievement-statistics-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Progress</span>
+              <h3 class="section-title">Continuous Education Metrics</h3>
+            </div>
+
+            <div class="achievement-statistics-grid" id="achievement-stats-root">
+              <!-- Dynamically populated statistics counters -->
+            </div>
+          </div>
+
+          <!-- Learning Journey Timeline (Swapping horizontal/vertical) -->
+          <div class="learning-timeline-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Roadmap</span>
+              <h3 class="section-title">Learning Journey Timeline</h3>
+            </div>
+
+            <div class="learning-timeline-outer">
+              <div class="learning-timeline-track" id="learning-timeline-root">
+                <!-- Dynamically populated timeline milestones -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Closing CTA -->
+          <div class="certificates-cta reveal-fade-up">
+            <div class="certificates-cta-panel card card-glass">
+              <div class="cta-mesh"></div>
+              <div class="certificates-pulse-glow"></div>
+              
+              <h3 class="certificates-cta-title">Audit the Technical Credentials</h3>
+              <p class="certificates-cta-desc">Review the complete verified resume database summarizing virtualization audits, proxy routing tests, and local model serialization releases.</p>
+              
+              <div class="certificates-cta-buttons">
+                <a href="#certificates" class="btn btn-gradient">
+                  <span>View Full Resume</span>
+                  <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#certificates" class="btn btn-secondary">
+                  <i data-lucide="mail"></i>
+                  <span>Contact Founder</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           CONTACT & COLLABORATION HUB
+           ========================================================================== -->
+      <section id="contact" class="section contact-section">
+        <div class="container">
+
+          <!-- Section Header -->
+          <div class="section-header reveal-fade-up">
+            <span class="section-subtitle">Connect</span>
+            <h2 class="section-title">Start a Conversation</h2>
+            <p class="section-description">Reach out to audit processes, request secure sandbox builds, or schedule seed investment discussions.</p>
+          </div>
+
+          <!-- Contact Hero Split Grid (45% Content / 55% Visual) -->
+          <div class="contact-hero-grid reveal-fade-up">
+            
+            <!-- 45% Content Column -->
+            <div class="contact-hero-content">
+              <h3 class="contact-hero-tagline">Let's build secure infrastructure endpoints together</h3>
+              <p class="contact-hero-desc">We collaborate with engineering teams to isolate container runtime memory blocks, write performant eBPF routing rules, and optimize serializing weights engines.</p>
+              <div class="contact-hero-actions">
+                <a href="#contact-form-anchor" class="btn btn-gradient">
+                  <span>Send Secure Message</span>
+                  <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                  <i data-lucide="calendar"></i>
+                  <span>Schedule Meeting</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- 55% Visual Column -->
+            <div class="contact-hero-visual">
+              <div class="contact-visual-container card card-glass">
+                <div class="contact-visual-mesh"></div>
+                <div class="contact-visual-glow"></div>
+                
+                <!-- Floating geometric layers -->
+                <div class="contact-floating-art">
+                  <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="80" y="60" width="240" height="180" rx="12" stroke="var(--primary)" stroke-width="1" stroke-dasharray="8 4" class="orbit-circle-slow" />
+                    <rect x="110" y="85" width="180" height="130" rx="8" stroke="var(--accent)" stroke-width="1.5" class="orbit-circle-fast" />
+                    
+                    <!-- Nodes connection paths -->
+                    <circle cx="200" cy="150" r="24" fill="var(--bg-secondary)" stroke="var(--primary)" stroke-width="2" />
+                    <path d="M80 60 L200 150 M320 60 L200 150 M80 240 L200 150 M320 240 L200 150" stroke="var(--border-color)" stroke-width="1" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Contact Methods Grid -->
+          <div class="contact-methods-section reveal-fade-up">
+            <div class="contact-methods-grid" id="contact-methods-root">
+              <!-- Dynamically populated contact methods -->
+            </div>
+          </div>
+
+          <!-- Contact Form & Availability Side-by-Side Grid -->
+          <div class="contact-form-grid-layout reveal-fade-up" id="contact-form-anchor">
+            
+            <!-- Left Side: Interactive Glass Form -->
+            <div class="contact-form-column">
+              <div class="contact-form-panel card card-glass">
+                <h4 class="form-panel-title">Message Console</h4>
+                <p class="form-panel-desc">Submit host log inquiries or schedule verification audits below.</p>
+                
+                <form class="contact-glass-form" id="contact-form-element" novalidate>
+                  <div class="form-row-split">
+                    <div class="form-group-item">
+                      <label for="contact-name" class="form-label-tag">Name</label>
+                      <input type="text" id="contact-name" class="form-input-field" placeholder="John Doe" required aria-required="true" autocomplete="name" />
+                      <span class="form-error-hint" id="error-name" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group-item">
+                      <label for="contact-email" class="form-label-tag">Email Address</label>
+                      <input type="email" id="contact-email" class="form-input-field" placeholder="email@example.com" required aria-required="true" autocomplete="email" />
+                      <span class="form-error-hint" id="error-email" aria-live="polite"></span>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group-item">
+                    <label for="contact-subject" class="form-label-tag">Subject</label>
+                    <input type="text" id="contact-subject" class="form-input-field" placeholder="Collaboration or Audit Request" required aria-required="true" />
+                    <span class="form-error-hint" id="error-subject" aria-live="polite"></span>
+                  </div>
+                  
+                  <div class="form-group-item">
+                    <label for="contact-message" class="form-label-tag">Message</label>
+                    <textarea id="contact-message" class="form-textarea-field" placeholder="Describe system details or project scope..." rows="5" required aria-required="true"></textarea>
+                    <span class="form-error-hint" id="error-message" aria-live="polite"></span>
+                  </div>
+                  
+                  <div class="form-buttons-row">
+                    <button type="submit" class="btn btn-gradient" id="contact-submit-btn">
+                      <span>Send Message</span>
+                      <i data-lucide="send"></i>
+                    </button>
+                    <button type="reset" class="btn btn-secondary" id="contact-reset-btn">
+                      <span>Clear Form</span>
+                      <i data-lucide="rotate-ccw"></i>
+                    </button>
+                  </div>
+                  <div class="form-feedback-overlay" id="form-feedback" aria-live="polite"></div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Right Side: Availability Panel -->
+            <div class="contact-availability-column" id="contact-availability-root">
+              <!-- Dynamically populated availability details -->
+            </div>
+
+          </div>
+
+          <!-- Social Profiles -->
+          <div class="contact-social-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">Profiles</span>
+              <h3 class="section-title">Technical Registries</h3>
+            </div>
+            
+            <div class="contact-social-grid" id="contact-social-root">
+              <!-- Dynamically populated social profile cards -->
+            </div>
+          </div>
+
+          <!-- FAQ Expandable Accordion -->
+          <div class="contact-faq-section reveal-fade-up">
+            <div class="section-header center">
+              <span class="section-subtitle">FAQ</span>
+              <h3 class="section-title">Frequently Asked Questions</h3>
+            </div>
+
+            <div class="contact-faq-accordion" id="contact-faq-root">
+              <!-- Dynamically populated FAQ expandable items -->
+            </div>
+          </div>
+
+          <!-- Final Closing CTA -->
+          <div class="contact-final-cta reveal-fade-up">
+            <div class="contact-final-cta-panel card card-glass">
+              <div class="cta-mesh"></div>
+              <div class="contact-final-pulse-glow"></div>
+              
+              <h3 class="contact-final-title">Initiate the Systems Audit</h3>
+              <p class="contact-final-desc">Connect directly to integrate micro-kernels, check cache bounds security, or download system release profiles.</p>
+              
+              <div class="contact-final-buttons">
+                <a href="#contact-form-anchor" class="btn btn-gradient">
+                  <span>Start Conversation</span>
+                  <i data-lucide="orbit"></i>
+                </a>
+                <a href="#certificates" class="btn btn-secondary">
+                  <i data-lucide="download"></i>
+                  <span>Download Resume</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ==========================================================================
+         APPLICATION FOOTER closing experience
+         ========================================================================== -->
+    <footer class="app-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          
+          <!-- Column 1: Brand Info -->
+          <div class="footer-brand-col">
+            <a href="#" class="nav-logo" aria-label="My Portfolio Logo">
+              <i data-lucide="antigravity"></i>
+              <span>PORTFOLIO</span>
+            </a>
+            <p class="footer-brand-desc" id="footer-brand-desc-root">Architecting zero-trust system environments and compiled models serialization platforms.</p>
+          </div>
+          
+          <!-- Column 2: Quick Links Navigation Map -->
+          <div class="footer-links-col">
+            <span class="footer-col-title">Navigation</span>
+            <ul class="footer-links-list" id="footer-nav-links-root">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+          
+          <!-- Column 3: Resources & Agreements -->
+          <div class="footer-links-col">
+            <span class="footer-col-title">Resources</span>
+            <ul class="footer-links-list" id="footer-resources-links-root">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+
+          <!-- Column 4: Social Icons & Compact Newsletter Module -->
+          <div class="footer-social-newsletter-col">
+            <span class="footer-col-title">Registry & Updates</span>
+            <div class="footer-social-icons-row" id="footer-social-links-root">
+              <!-- Dynamically populated -->
+            </div>
+            
+            <div class="footer-newsletter-card card card-glass">
+              <h5 class="newsletter-card-title">Telemetry Updates</h5>
+              <p class="newsletter-card-desc">Subscribe to secure releases and audit bulletins.</p>
+              
+              <form class="footer-newsletter-form" id="footer-newsletter-element" novalidate>
+                <div class="newsletter-input-group">
+                  <input type="email" id="footer-newsletter-email" class="newsletter-input-field" placeholder="inbound@nexus-sandbox.io" required aria-required="true" />
+                  <button type="submit" class="newsletter-submit-btn btn btn-gradient" aria-label="Subscribe">
+                    <i data-lucide="check"></i>
+                  </button>
+                </div>
+                <span class="newsletter-error-hint" id="newsletter-error" aria-live="polite"></span>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <p class="footer-copyright" id="footer-copyright-root">
+            &copy; <span id="footer-year">2026</span> Founder Sandbox. All rights reserved.
+          </p>
+          <p class="footer-built-tag">Built with passion &amp; secure telemetry.</p>
+          
+          <div class="footer-bottom-meta">
+            <span class="footer-meta-tag" id="footer-version-root">v1.2.0-beta</span>
+            <span class="footer-meta-tag"><i data-lucide="shield-check"></i> SSL Secure</span>
+            <span class="footer-meta-tag" id="footer-theme-indicator-root">
+              <i data-lucide="sun"></i>
+              <span>Theme: Light</span>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- Floating Back To Top Button -->
+    <div class="back-to-top-anchor" id="back-to-top-container">
+      <button class="back-to-top-btn glass-card" id="back-to-top-btn" aria-label="Back to Top">
+        <i data-lucide="arrow-up"></i>
+      </button>
+    </div>
+
+    <!-- Floating AI Assistant Button Anchor -->
+    <div class="ai-assistant-anchor" aria-hidden="true">
+      <button class="ai-btn glass-card" aria-label="AI Assistant Placeholder" tabindex="-1">
+        <i data-lucide="bot"></i>
+      </button>
+    </div>
+
+    <!-- ==========================================================================
+         PROJECT DETAILS MODAL (Keyboard accessible split-screen container)
+         ========================================================================== -->
+    <div id="project-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-container glass-card">
+        
+        <!-- Sticky Header (Always visible when scrollable) -->
+        <header class="modal-sticky-header">
+          <div class="modal-header-left">
+            <h2 id="modal-project-title" class="modal-title">Project Title</h2>
+            <span id="modal-project-status" class="badge">Live</span>
+          </div>
+          <button class="modal-close-btn" aria-label="Close modal dialog" type="button">
+            <i data-lucide="x"></i>
+          </button>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="modal-content-grid">
+          
+          <!-- Left Column (Visuals and Gallery) -->
+          <div class="modal-col-left">
+            <div class="modal-mockup-wrapper">
+              <!-- Dynamically populated Browser or Device Mockup frame -->
+              <div id="modal-mockup-container"></div>
+            </div>
+            
+            <!-- Gallery Thumbnails -->
+            <div class="modal-gallery-section">
+              <h4 class="gallery-section-title">Media Gallery</h4>
+              <div id="modal-thumbnails" class="gallery-thumbnails"></div>
+            </div>
+          </div>
+
+          <!-- Right Column (Text and Tech stacks) -->
+          <div class="modal-col-right">
+            
+            <div class="modal-scroll-pane">
+              
+              <div class="modal-info-block">
+                <h4 class="info-block-title">Overview</h4>
+                <p id="modal-project-overview" class="info-block-text">Detailed summary of the software framework.</p>
+              </div>
+
+              <div class="modal-info-block">
+                <h4 class="info-block-title">Problem Statement</h4>
+                <p id="modal-project-problem" class="info-block-text">What challenges existed before development.</p>
+              </div>
+
+              <div class="modal-info-block">
+                <h4 class="info-block-title">Solution Implemented</h4>
+                <p id="modal-project-solution" class="info-block-text">How the tool resolves the problem statement.</p>
+              </div>
+
+              <div class="modal-info-block">
+                <h4 class="info-block-title">Key Features</h4>
+                <ul id="modal-project-features" class="info-block-list"></ul>
+              </div>
+
+              <div class="modal-info-block">
+                <h4 class="info-block-title">System Architecture</h4>
+                <p id="modal-project-architecture" class="info-block-text">Architecture framework details.</p>
+              </div>
+
+              <div class="modal-info-block">
+                <h4 class="info-block-title">Technologies Used</h4>
+                <div id="modal-project-tech" class="tech-items" style="margin-top: 8px;"></div>
+              </div>
+
+              <div class="modal-info-block modal-metadata-row">
+                <div>
+                  <span class="meta-label">Year</span>
+                  <span id="modal-project-year" class="meta-val">2026</span>
+                </div>
+                <div>
+                  <span class="meta-label">Duration</span>
+                  <span id="modal-project-duration" class="meta-val">6 Months</span>
+                </div>
+                <div>
+                  <span class="meta-label">Difficulty</span>
+                  <span id="modal-project-difficulty" class="meta-val">Advanced</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="modal-actions-bar">
+              <a id="modal-link-demo" href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                <span>Launch Live Demo</span>
+                <i data-lucide="external-link"></i>
+              </a>
+              <a id="modal-link-github" href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="github"></i>
+                <span>View Source</span>
+              </a>
+              <a id="modal-link-docs" href="#" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="book-open"></i>
+                <span>Read Documentation</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         LIGHTBOX FULLSCREEN GALLERY OVERLAY
+         ========================================================================== -->
+    <div id="gallery-lightbox" class="lightbox-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Fullscreen Gallery Lightbox">
+      <button class="lightbox-close-btn" aria-label="Close fullscreen gallery" type="button"><i data-lucide="x"></i></button>
+      
+      <div class="lightbox-container">
+        <button class="lightbox-nav-btn prev-btn" aria-label="Previous image" type="button"><i data-lucide="chevron-left"></i></button>
+        
+        <div class="lightbox-image-wrap">
+          <div id="lightbox-image-placeholder" class="lightbox-dummy-image"></div>
+          <!-- Future actual image: <img id="lightbox-img" src="" alt=""> -->
+          <div id="lightbox-caption" class="lightbox-caption-text">Image caption description.</div>
+        </div>
+
+        <button class="lightbox-nav-btn next-btn" aria-label="Next image" type="button"><i data-lucide="chevron-right"></i></button>
+      </div>
+
+      <!-- Lightbox Thumbnails Sync indicator list -->
+      <div id="lightbox-thumbnails-indicator" class="lightbox-dots"></div>
+    </div>
+
+    <!-- Footer Shell -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        
+        <div class="footer-top">
+          <!-- Footer Branding Placeholder -->
+          <div class="footer-info">
+            <div class="footer-logo-placeholder" aria-hidden="true"></div>
+            <div class="footer-text-placeholder" aria-hidden="true"></div>
+          </div>
+
+          <!-- Footer Columns Placeholders -->
+          <div class="footer-column" aria-hidden="true">
+            <div class="footer-title-placeholder"></div>
+            <div class="footer-link-placeholder"></div>
+            <div class="footer-link-placeholder"></div>
+            <div class="footer-link-placeholder"></div>
+          </div>
+
+          <div class="footer-column" aria-hidden="true">
+            <div class="footer-title-placeholder"></div>
+            <div class="footer-link-placeholder"></div>
+            <div class="footer-link-placeholder"></div>
+            <div class="footer-link-placeholder"></div>
+          </div>
+
+          <div class="footer-column" aria-hidden="true">
+            <div class="footer-title-placeholder"></div>
+            <div class="footer-link-placeholder"></div>
+            <div class="footer-link-placeholder"></div>
+            <div class="footer-link-placeholder"></div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <!-- Copyright Label -->
+          <div class="footer-copy-placeholder" aria-hidden="true"></div>
+
+          <!-- Social Icons Placeholders -->
+          <div class="footer-socials" aria-hidden="true">
+            <div class="footer-social-placeholder"></div>
+            <div class="footer-social-placeholder"></div>
+            <div class="footer-social-placeholder"></div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio Project</title>
+
+  <!-- SEO & Metadata -->
+  <meta name="description"
+    content="A luxury SaaS-style developer portfolio and digital garden. Inspired by Vercel, Stripe, and Apple.">
+  <meta name="author" content="Developer Name">
+  <meta name="theme-color" content="#05070B">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="My Portfolio Project | Premium Developer Portfolio">
+  <meta property="og:description"
+    content="A luxury SaaS-style developer portfolio and digital garden. Inspired by Vercel, Stripe, and Apple.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/glass.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Library CDNs (GSAP, GSAP ScrollTrigger, Lenis, Lucide) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.379.0/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Modular Scripts Entry -->
+  <script type="module" src="js/main.js" defer></script>
+
+  <!-- Inline Theme Initialization & Fail-Safe Toggle -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('portfolio-theme');
+        var theme = saved ? JSON.parse(saved) : 'dark';
+        if (theme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch(e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem('portfolio-theme', JSON.stringify(next));
+      } catch(e) {}
+
+      var btns = document.querySelectorAll('.theme-switch-btn');
+      btns.forEach(function(btn) {
+        if (next === 'light') {
+          btn.setAttribute('title', 'Switch to Dark Theme');
+          btn.setAttribute('aria-label', 'Switch to Dark Theme');
+          btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+        } else {
+          btn.setAttribute('title', 'Switch to Light Theme');
+          btn.setAttribute('aria-label', 'Switch to Light Theme');
+          btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
+        }
+      });
+    }
+    window.toggleTheme = toggleTheme;
+  </script>
+</head>
+
+<body>
+
+  <!-- Skip To Main Content (Keyboard / Screen Reader Navigation) -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- ==========================================================================
+       BACKGROUND LAYER ENGINE
+       ========================================================================== -->
+  <div class="bg-wrapper" aria-hidden="true">
+    <!-- 1. Deep Navy background is handled via CSS var(--bg-primary) on .bg-wrapper -->
+
+    <!-- 2. Mesh Gradient -->
+    <div class="bg-layer bg-layer--mesh"></div>
+
+    <!-- 3. Noise Texture -->
+    <div class="bg-layer bg-layer--noise anim-noise-drift"></div>
+
+    <!-- 5. Blue Ambient Glow -->
+    <div class="bg-layer bg-layer--glow anim-pulse-glow"></div>
+
+    <!-- 6. Floating Blobs -->
+    <div class="bg-layer bg-layer--blobs">
+      <div class="blob blob-1 anim-blob-1"></div>
+      <div class="blob blob-2 anim-blob-2"></div>
+      <div class="blob blob-3 anim-blob-3"></div>
+    </div>
+
+    <!-- 7. Particles Canvas -->
+    <canvas id="particle-canvas" class="bg-layer bg-layer--particles"></canvas>
+  </div>
+
+  <!-- ==========================================================================
+       APPLICATION SHELL LAYOUT
+       ========================================================================== -->
+  <div id="app-layout">
+
+    <!-- Sticky Navigation Header -->
+    <header class="navbar" role="banner">
+      <div class="container">
+
+        <!-- Logo -->
+        <a href="#" class="nav-logo" aria-label="My Portfolio Logo">
+          <i data-lucide="shield" class="text-primary"></i>
+          <span class="font-heading tracking-[0.1em] font-bold">PORTFOLIO</span>
+        </a>
+
+        <!-- Desktop Navigation Links (Side-by-side order with line under active word) -->
+        <nav class="nav-menu" role="navigation" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#startup" class="nav-link">Startup</a></li>
+            <li><a href="#certificates" class="nav-link">Certificates</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Navbar Actions (Theme Switch, Resume, Let's Connect) -->
+        <div class="nav-actions">
+          <!-- Theme Switcher Button -->
+          <button class="theme-switch-btn" onclick="toggleTheme()" aria-label="Toggle Theme" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+          </button>
+
+          <!-- Resume Button -->
+          <a href="assets/KOYYADA_ROHITH_RESUME.pdf" download="KOYYADA_ROHITH_RESUME.pdf" target="_blank"
+            class="btn btn-secondary btn-sm nav-resume-btn" aria-label="Download Resume">
+            <span>Resume</span>
+          </a>
+
+          <!-- Let's Connect CTA -->
+          <a href="#contact" class="btn btn-gradient btn-sm nav-connect-btn">
+            <span>Let's Connect</span>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="menu-toggle-btn" aria-label="Open navigation drawer" aria-expanded="false"
+            aria-controls="mobile-drawer" type="button">
+            <i data-lucide="menu"></i>
+          </button>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer Overlay -->
+    <div class="nav-overlay" aria-hidden="true"></div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="nav-drawer" aria-hidden="true" role="dialog" aria-modal="true"
+      aria-label="Mobile Navigation">
+      <div class="drawer-header">
+        <span class="nav-logo">
+          <i data-lucide="shield"></i>
+          <span>MENU</span>
+        </span>
+        <button class="drawer-close-btn" aria-label="Close navigation drawer" type="button">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Links -->
+      <nav class="drawer-nav" role="navigation" aria-label="Mobile navigation">
+        <ul class="drawer-list">
+          <li><a href="#hero" class="drawer-link">Home</a></li>
+          <li><a href="#about" class="drawer-link">About</a></li>
+          <li><a href="#projects" class="drawer-link">Projects</a></li>
+          <li><a href="#experience" class="drawer-link">Experience</a></li>
+          <li><a href="#skills" class="drawer-link">Skills</a></li>
+          <li><a href="#startup" class="drawer-link">Startup</a></li>
+          <li><a href="#certificates" class="drawer-link">Certificates</a></li>
+          <li><a href="#contact" class="drawer-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Drawer Footer -->
+      <div class="drawer-footer">
+        <a href="assets/KOYYADA_ROHITH_RESUME.pdf" download="KOYYADA_ROHITH_RESUME.pdf" target="_blank"
+          class="btn btn-primary"
+          style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;"
+          aria-label="Download Resume">
+          <i data-lucide="download"></i>
+          <span>Resume</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main id="main-content" role="main">
+
+      <!-- ==========================================================================
+           HERO SECTION
+           ========================================================================== -->
+      <section id="hero" class="hero section">
+        <div class="container hero-grid">
+
+          <!-- Left Column Content -->
+          <div class="hero-content">
+            <!-- Welcome Badge -->
+            <div class="hero-badge reveal-fade-up">
+              <span>👋 Welcome to My Digital Workspace</span>
+            </div>
+
+            <!-- Main Head Title -->
+            <h1 class="hero-title reveal-fade-up">KOYYADA ROHITH</h1>
+
+            <!-- Sub Head Title -->
+            <p class="hero-subtitle hero-subtitle-head reveal-fade-up">
+              Cybersecurity Enthusiast • SOC in Training • B.Tech Computer Science & Engineering
+            </p>
+
+            <!-- Tagline Content / Startup Banner -->
+            <div class="hero-startup reveal-fade-up">
+              <div class="startup-line">Building <span class="text-gradient">Cyber Black World</span></div>
+              <div class="startup-line">An <span class="text-gradient">AI-Powered Cybersecurity Ecosystem</span></div>
+            </div>
+
+            <!-- Bio Description -->
+            <div class="hero-bio reveal-fade-up" style="margin-top: 0.25rem; margin-bottom: 1.25rem;">
+              <p class="hero-subtitle" style="margin-bottom: 0.5rem;">
+                I'm a Computer Science Engineering student passionate about cybersecurity, SOC operations, network
+                security, threat intelligence, and AI-driven security.
+              </p>
+              <p class="hero-subtitle" style="margin-bottom: 0;">
+                Through internships, hands-on labs, certifications, and real-world projects, I continuously strengthen my
+                technical expertise while building Cyber Black World an AI-powered cybersecurity ecosystem dedicated to
+                creating innovative solutions for a safer digital future.
+              </p>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="hero-ctas reveal-fade-up">
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore My Work</span>
+                <i data-lucide="arrow-right"></i>
+              </a>
+              <a href="assets/KOYYADA_ROHITH_RESUME.pdf" download="KOYYADA_ROHITH_RESUME.pdf" target="_blank"
+                class="btn btn-secondary">
+                <span>Download Resume</span>
+                <i data-lucide="download"></i>
+              </a>
+              <a href="#contact" class="btn btn-secondary btn-contact">
+                <span>Contact Me</span>
+                <i data-lucide="mail"></i>
+              </a>
+            </div>
+
+            <!-- Social Connections (5 Media Account Logos: LinkedIn, GitHub, Instagram, X, Mail Box) -->
+            <div class="hero-socials reveal-fade-up" aria-label="Social connections">
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/koyyada-rohith-72bb82372/" class="social-link"
+                aria-label="LinkedIn Profile" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <!-- GitHub -->
+              <a href="https://github.com/KoyyadaRohith" class="social-link" aria-label="GitHub Profile" title="GitHub"
+                target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+              </a>
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/mr_rohith_43/" class="social-link" aria-label="Instagram Profile"
+                title="Instagram" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <!-- X (Twitter) -->
+              <a href="https://x.com/Mr_Rohith43" class="social-link" aria-label="X (Twitter) Profile"
+                title="X (Twitter)" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+              </a>
+              <!-- Mail Box -->
+              <a href="mailto:koyyadarohith43@gmail.com" class="social-link" aria-label="Send Email" title="Mail Box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column Visual (Avatar Logo + Dual-Orbit Rotating Badges) -->
+          <div class="hero-visual reveal-fade-left">
+            <div class="visual-container">
+              
+              <!-- Center Raw Image Logo (Remains 100% Still & Undisturbed) -->
+              <div class="avatar-frame">
+                <img src="assets/profile/portrait.jpg" alt="Koyyada Rohith - Cybersecurity Engineer" class="avatar-img" />
+              </div>
+
+              <!-- Outer Orbit Ring (Counter-Clockwise: Right to Left) with 3 Labels at 120deg Equal Gaps -->
+              <div class="orbit-ring orbit-outer">
+                <!-- 1. Threat Intelligence (0deg / Top) -->
+                <div class="badge-slot slot-top">
+                  <div class="tech-badge badge-ccw">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>Threat Intelligence</span>
+                  </div>
+                </div>
+
+                <!-- 2. AI Security (120deg / Bottom Right) -->
+                <div class="badge-slot slot-bottom-right">
+                  <div class="tech-badge badge-ccw">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="15" x2="23" y2="15"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="15" x2="4" y2="15"></line></svg>
+                    <span>AI Security</span>
+                  </div>
+                </div>
+
+                <!-- 3. Security Innovation (240deg / Bottom Left) -->
+                <div class="badge-slot slot-bottom-left">
+                  <div class="tech-badge badge-ccw">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>
+                    <span>Security Innovation</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Inner Orbit Ring (Clockwise: Left to Right) with 2 Labels at 180deg Equal Gaps -->
+              <div class="orbit-ring orbit-inner">
+                <!-- 4. Network Security (180deg / Left) -->
+                <div class="badge-slot slot-left">
+                  <div class="tech-badge badge-cw">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>Network Security</span>
+                  </div>
+                </div>
+
+                <!-- 5. Cyber Black World (0deg / Right) -->
+                <div class="badge-slot slot-right">
+                  <div class="tech-badge badge-cw">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    <span>Cyber Black World</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll-wrapper">
+          <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+            <span class="font-secondary text-xs uppercase tracking-widest text-muted">Scroll</span>
+            <i data-lucide="chevron-down" class="text-primary mt-1"></i>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+
+</html>

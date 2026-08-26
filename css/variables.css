@@ -1,0 +1,245 @@
+/* ==========================================================================
+   DESIGN TOKENS & SYSTEM VARIABLES (Light, Dark, Auto Modes)
+   ========================================================================== */
+
+/* --- Fonts Setup --- */
+
+/* Space Grotesk */
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('../assets/fonts/SpaceGrotesk/space-grotesk-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('../assets/fonts/SpaceGrotesk/space-grotesk-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('../assets/fonts/SpaceGrotesk/space-grotesk-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Inter */
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter/inter-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter/inter-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter/inter-latin-600-normal.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter/inter-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* JetBrains Mono */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../assets/fonts/JetBrainsMono/jetbrains-mono-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../assets/fonts/JetBrainsMono/jetbrains-mono-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Global Tokens --- */
+:root {
+  /* Font Families */
+  --font-primary: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-secondary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+
+  /* Spacing Scale (Clamp-based for smooth scaling) */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  --spacing-section: clamp(4rem, 8vw, 8rem);
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transition Durations & Easings */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-theme: 0.4s ease;
+
+  /* Shadow Scale */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.15);
+
+  /* Dimensions */
+  --container-width: 1280px;
+
+  /* Layering (Z-Index) */
+  --z-background: -10;
+  --z-bg-layer: -9;
+  --z-bg-grid: -8;
+  --z-bg-blobs: -7;
+  --z-bg-particles: -6;
+  --z-base: 1;
+  --z-navbar: 100;
+  --z-overlay: 200;
+  --z-drawer: 210;
+  --z-modal: 300;
+  --z-tooltip: 400;
+}
+
+/* ==========================================================================
+   THEME STYLING
+   ========================================================================== */
+
+/* --- Dark Theme Tokens (Default) --- */
+:root, [data-theme="dark"] {
+  --bg-primary: #05070B;
+  --bg-secondary: #0E1320;
+  --surface: #111827;
+  --surface-hover: #1F2937;
+  --primary: #3B82F6;
+  --primary-hover: #2563EB;
+  --sky-blue: #38BDF8;
+  --accent: #7C3AED;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A8B2C7;
+  --text-muted: #6B7280;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-hover: rgba(255, 255, 255, 0.15);
+  --glass-bg: rgba(14, 19, 32, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.12);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.2);
+  --mesh-opacity: 0.15;
+  --grid-opacity: 0.04;
+  --noise-opacity: 0.015;
+  
+  /* Gradient Sets */
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--accent));
+  --gradient-glow: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+}
+
+/* --- Light Theme Tokens --- */
+[data-theme="light"] {
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #F1F5F9;
+  --surface: #FFFFFF;
+  --surface-hover: #F8FAFC;
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --sky-blue: #38BDF8;
+  --accent: #7C3AED;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --border-color: rgba(15, 23, 42, 0.12);
+  --border-color-hover: rgba(15, 23, 42, 0.25);
+  --glass-bg: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --scrollbar-thumb: rgba(15, 23, 42, 0.12);
+  --scrollbar-thumb-hover: rgba(15, 23, 42, 0.2);
+  --mesh-opacity: 0.05;
+  --grid-opacity: 0.06;
+  --noise-opacity: 0.008;
+
+  /* Gradient Sets */
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--accent));
+  --gradient-glow: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
+}
+
+/* --- Auto Theme Settings (System preference matching) --- */
+@media (prefers-color-scheme: light) {
+  [data-theme="auto"] {
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #F1F5F9;
+    --surface: #FFFFFF;
+    --surface-hover: #F8FAFC;
+    --primary: #2563EB;
+    --primary-hover: #1D4ED8;
+    --sky-blue: #38BDF8;
+    --accent: #7C3AED;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+    --border-color: rgba(15, 23, 42, 0.08);
+    --border-color-hover: rgba(15, 23, 42, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(15, 23, 42, 0.06);
+    --scrollbar-thumb: rgba(15, 23, 42, 0.12);
+    --scrollbar-thumb-hover: rgba(15, 23, 42, 0.2);
+    --mesh-opacity: 0.05;
+    --grid-opacity: 0.06;
+    --noise-opacity: 0.008;
+
+    --gradient-primary: linear-gradient(135deg, var(--primary), var(--accent));
+    --gradient-glow: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="auto"] {
+    --bg-primary: #05070B;
+    --bg-secondary: #0E1320;
+    --surface: #111827;
+    --surface-hover: #1F2937;
+    --primary: #3B82F6;
+    --primary-hover: #2563EB;
+    --sky-blue: #38BDF8;
+    --accent: #7C3AED;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A8B2C7;
+    --text-muted: #6B7280;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-color-hover: rgba(255, 255, 255, 0.15);
+    --glass-bg: rgba(14, 19, 32, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.06);
+    --scrollbar-thumb: rgba(255, 255, 255, 0.12);
+    --scrollbar-thumb-hover: rgba(255, 255, 255, 0.2);
+    --mesh-opacity: 0.15;
+    --grid-opacity: 0.04;
+    --noise-opacity: 0.015;
+
+    --gradient-primary: linear-gradient(135deg, var(--primary), var(--accent));
+    --gradient-glow: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  }
+}
