@@ -53,6 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Animation (Scroll, Particles, GSAP)
   animationManager.init();
 
+  // Initialize Journey Timeline & Section Scroll Animations
+  initTimelineScrollAnimations();
+
   // Initialize Stat Counter Animation (BY THE NUMBERS)
   initStatCounters();
 
@@ -66,6 +69,44 @@ document.addEventListener('DOMContentLoaded', () => {
     dom.addClass(dom.body, 'loaded');
   }, 100);
 });
+
+function initTimelineScrollAnimations() {
+  const animTargets = document.querySelectorAll(
+    '.journey-reveal-header, .journey-milestone, .work-reveal-header, .work-step-card, .vision-scroll-block'
+  );
+  if (!animTargets.length) return;
+
+  // Reduced motion check: immediately show without animations
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    animTargets.forEach(el => el.classList.add('is-revealed'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        // Stagger How I Work cards smoothly
+        if (el.classList.contains('work-step-card')) {
+          const stepIndex = parseInt(el.getAttribute('data-step') || '1', 10);
+          el.style.transitionDelay = `${(stepIndex - 1) * 90}ms`;
+        }
+        el.classList.add('is-revealed');
+      } else {
+        // Naturally reverse when scrolling away
+        el.classList.remove('is-revealed');
+        if (el.classList.contains('work-step-card')) {
+          el.style.transitionDelay = '0ms';
+        }
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  animTargets.forEach(el => observer.observe(el));
+}
 
 function initStatCounters() {
   const counters = document.querySelectorAll('.counter');

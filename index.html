@@ -478,8 +478,12 @@
             <!-- My Mission -->
             <div class="mission-card card-glass card-hover">
               <div class="card-badge-header">
-                <div class="card-icon-box icon-cyan">
-                  <i data-lucide="target" class="icon-svg"></i>
+                <div class="card-icon-box icon-cyan" aria-label="Mission Symbol">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-svg">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                  </svg>
                 </div>
                 <h4>My Mission</h4>
               </div>
@@ -498,8 +502,11 @@
             <!-- My Vision -->
             <div class="vision-card card-glass card-hover">
               <div class="card-badge-header">
-                <div class="card-icon-box icon-purple">
-                  <i data-lucide="zap" class="icon-svg"></i>
+                <div class="card-icon-box icon-purple" aria-label="Vision Symbol">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-svg">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
                 </div>
                 <h4>My Vision</h4>
               </div>
@@ -518,217 +525,229 @@
           </div>
 
 
-          <!-- 3. ENGINEERING PHILOSOPHY -->
-          <div class="about-block philosophy-block reveal-up">
-            <div class="section-header text-center">
-              <span class="section-label">HOW I BUILD</span>
-              <h3 class="section-title">Engineering Philosophy</h3>
+          <!-- 3. MY JOURNEY (Alternating Vertical Timeline) -->
+          <div class="about-journey-section journey-scroll-block">
+            <div class="section-header journey-reveal-header">
+              <span class="section-subtitle">MY JOURNEY</span>
+              <h3 class="section-title">Learning, Building, and Moving Forward</h3>
+              <p class="section-description">A chronological trajectory of continuous curiosity, engineering education, and practical security milestones.</p>
             </div>
 
-            <div class="philosophy-grid">
-              <div class="philosophy-card card-glass card-hover">
-                <div class="philosophy-icon"><i data-lucide="book-open"></i></div>
-                <h5>LEARN</h5>
-                <p>Build a strong foundation through continuous learning and practical exploration.</p>
+            <div class="journey-timeline-container">
+              <!-- Central vertical spine track with progressive scroll fill -->
+              <div class="journey-spine-track" aria-hidden="true">
+                <div class="journey-spine-progress"></div>
+              </div>
+              <!-- Moving center indicator dot synchronized with scroll progress -->
+              <div class="journey-moving-dot" aria-hidden="true"></div>
+
+              <!-- Milestone 1 (Left): 10th / SSC -->
+              <div class="journey-milestone milestone--left" data-index="1">
+                <div class="milestone-node" aria-hidden="true">
+                  <div class="node-inner-dot"></div>
+                </div>
+                <div class="milestone-card card-glass">
+                  <div class="milestone-card-header">
+                    <span class="milestone-period">2021–2022</span>
+                    <span class="milestone-badge">Foundation</span>
+                  </div>
+                  <h4 class="milestone-title">Secondary School (SSC)</h4>
+                  <p class="milestone-desc">
+                    Completed my SSC at Castle Town High School, Rajeev Nagar, building the foundation for my academic journey.
+                  </p>
+                </div>
               </div>
 
-              <div class="philosophy-card card-glass card-hover">
-                <div class="philosophy-icon"><i data-lucide="code-2"></i></div>
-                <h5>BUILD</h5>
-                <p>Convert concepts and ideas into functional projects and real-world solutions.</p>
+              <!-- Milestone 2 (Right): Intermediate / MPC -->
+              <div class="journey-milestone milestone--right" data-index="2">
+                <div class="milestone-node" aria-hidden="true">
+                  <div class="node-inner-dot"></div>
+                </div>
+                <div class="milestone-card card-glass">
+                  <div class="milestone-card-header">
+                    <span class="milestone-period">2022–2024</span>
+                    <span class="milestone-badge">Academics</span>
+                  </div>
+                  <h4 class="milestone-title">Intermediate (MPC)</h4>
+                  <p class="milestone-desc">
+                    Completed my Intermediate education in Mathematics, Physics, and Chemistry at NRI Junior College, SR Nagar, strengthening my foundation for engineering studies.
+                  </p>
+                </div>
               </div>
 
-              <div class="philosophy-card card-glass card-hover">
-                <div class="philosophy-icon"><i data-lucide="shield-check"></i></div>
-                <h5>SECURE</h5>
-                <p>Design systems with security as a fundamental requirement rather than an afterthought.</p>
+              <!-- Milestone 3 (Left): B.Tech CSE -->
+              <div class="journey-milestone milestone--left" data-index="3">
+                <div class="milestone-node" aria-hidden="true">
+                  <div class="node-inner-dot"></div>
+                </div>
+                <div class="milestone-card card-glass">
+                  <div class="milestone-card-header">
+                    <span class="milestone-period">2024–Present</span>
+                    <span class="milestone-badge milestone-badge--accent">Engineering</span>
+                  </div>
+                  <h4 class="milestone-title">B.Tech in Computer Science and Engineering</h4>
+                  <p class="milestone-desc">
+                    Pursuing my B.Tech at Aurora Higher Education and Research Academy, Uppal, while developing my knowledge of computer science, software development, and cybersecurity.
+                  </p>
+                </div>
               </div>
 
-              <div class="philosophy-card card-glass card-hover">
-                <div class="philosophy-icon"><i data-lucide="cpu"></i></div>
-                <h5>INNOVATE</h5>
-                <p>Explore AI, automation, and emerging technologies to approach cybersecurity differently.</p>
+              <!-- Milestone 4 (Right): Web Development Internship -->
+              <div class="journey-milestone milestone--right" data-index="4">
+                <div class="milestone-node" aria-hidden="true">
+                  <div class="node-inner-dot"></div>
+                </div>
+                <div class="milestone-card card-glass">
+                  <div class="milestone-card-header">
+                    <span class="milestone-period">June–July 2025</span>
+                    <span class="milestone-badge">Internship</span>
+                  </div>
+                  <h4 class="milestone-title">Web Development Internship</h4>
+                  <p class="milestone-desc">
+                    Gained practical exposure to HTML, CSS, JavaScript, responsive web pages, interface development, and debugging.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Milestone 5 (Left): Cybersecurity Internship -->
+              <div class="journey-milestone milestone--left" data-index="5">
+                <div class="milestone-node" aria-hidden="true">
+                  <div class="node-inner-dot"></div>
+                </div>
+                <div class="milestone-card card-glass">
+                  <div class="milestone-card-header">
+                    <span class="milestone-period">April–June 2026</span>
+                    <span class="milestone-badge milestone-badge--accent">Cybersecurity</span>
+                  </div>
+                  <h4 class="milestone-title">Cybersecurity Internship</h4>
+                  <p class="milestone-desc">
+                    Developed foundational practical experience in cybersecurity operations, network traffic analysis using Wireshark, protocol investigation, and suspicious-activity analysis through hands-on labs.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Milestone 6 (Right): Cybersecurity & Product Projects -->
+              <div class="journey-milestone milestone--right" data-index="6">
+                <div class="milestone-node" aria-hidden="true">
+                  <div class="node-inner-dot"></div>
+                </div>
+                <div class="milestone-card card-glass">
+                  <div class="milestone-card-header">
+                    <span class="milestone-period">2026</span>
+                    <span class="milestone-badge">Projects</span>
+                  </div>
+                  <h4 class="milestone-title">Cybersecurity & Product Projects</h4>
+                  <p class="milestone-desc">
+                    Worked on projects involving network traffic analysis, malicious IP intelligence, and technology platforms while exploring AI-assisted product development.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Milestone 7 (Left): Placement Coordinator -->
+              <div class="journey-milestone milestone--left" data-index="7">
+                <div class="milestone-node" aria-hidden="true">
+                  <div class="node-inner-dot"></div>
+                </div>
+                <div class="milestone-card card-glass">
+                  <div class="milestone-card-header">
+                    <span class="milestone-period">2026</span>
+                    <span class="milestone-badge">Leadership</span>
+                  </div>
+                  <h4 class="milestone-title">Placement Coordinator</h4>
+                  <p class="milestone-desc">
+                    Took on a Placement Coordinator role, developing communication, coordination, teamwork, and professional skills alongside my technical journey.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Closing Note -->
+              <div class="journey-closing-statement text-center">
+                <span class="journey-quote">"My journey is ongoing. Every milestone represents another opportunity to learn, build, and improve."</span>
               </div>
             </div>
           </div>
 
 
-          <!-- 4. MY JOURNEY (Timeline) -->
-          <div class="about-block timeline-block reveal-up">
-            <div class="section-header text-center">
-              <span class="section-label">MILESTONES</span>
-              <h3 class="section-title">My Journey</h3>
-              <p class="section-subtitle">A continuous journey from curiosity to building.</p>
+          <!-- 4. HOW I WORK (Learn. Build. Secure. Improve.) -->
+          <div class="about-work-section work-scroll-block">
+            <div class="section-header work-reveal-header">
+              <span class="section-subtitle">HOW I WORK</span>
+              <h3 class="section-title">Learn. Build. Secure. Improve.</h3>
             </div>
 
-            <div class="about-timeline">
-              <div class="timeline-line"></div>
-
-              <div class="timeline-item timeline-item--left">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content card-glass">
-                  <span class="timeline-year">2021</span>
-                  <h4 class="timeline-title">THE BEGINNING</h4>
-                  <p class="timeline-desc">Initial curiosity about computers, technology, and digital systems.</p>
+            <div class="work-cards-grid">
+              <!-- 01 — Learn -->
+              <div class="work-step-card card-glass card-hover" data-step="1">
+                <div class="work-step-top">
+                  <span class="work-step-number">01</span>
                 </div>
-              </div>
-
-              <div class="timeline-item timeline-item--right">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content card-glass">
-                  <span class="timeline-year">2022</span>
-                  <h4 class="timeline-title">EXPLORING TECHNOLOGY</h4>
-                  <p class="timeline-desc">Deeper interest in programming, software, and computer science concepts.</p>
-                </div>
-              </div>
-
-              <div class="timeline-item timeline-item--left">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content card-glass">
-                  <span class="timeline-year">2023</span>
-                  <h4 class="timeline-title">ENTERING CYBERSECURITY</h4>
-                  <p class="timeline-desc">Focusing on security concepts, network defense, and threat analysis.</p>
-                </div>
-              </div>
-
-              <div class="timeline-item timeline-item--right">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content card-glass">
-                  <span class="timeline-year">2024</span>
-                  <h4 class="timeline-title">PRACTICAL APPLICATION</h4>
-                  <p class="timeline-desc">Connecting academic knowledge with practical technical projects.</p>
-                </div>
-              </div>
-
-              <div class="timeline-item timeline-item--left">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content card-glass">
-                  <span class="timeline-year">2025</span>
-                  <h4 class="timeline-title">BUILDING & EXPANDING</h4>
-                  <p class="timeline-desc">Gaining practical experience through projects, internships, and
-                    certifications.</p>
-                </div>
-              </div>
-
-              <div class="timeline-item timeline-item--right">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content card-glass timeline-highlight">
-                  <span class="timeline-year text-gradient">2026</span>
-                  <h4 class="timeline-title">BUILDING CYBER BLACK WORLD</h4>
-                  <p class="timeline-desc">Working toward the vision of an AI-powered cybersecurity ecosystem.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-
-          <!-- 5. BY THE NUMBERS (Stats Grid) -->
-          <div class="about-block stats-block reveal-up">
-            <div class="section-header text-center">
-              <span class="section-label">BY THE NUMBERS</span>
-            </div>
-
-            <div class="stats-grid">
-              <div class="stat-card card-glass card-hover">
-                <div class="stat-number"><span class="counter" data-target="17">0</span><span class="stat-plus">+</span>
-                </div>
-                <div class="stat-label">PROJECTS</div>
-              </div>
-
-              <div class="stat-card card-glass card-hover">
-                <div class="stat-number"><span class="counter" data-target="35">0</span><span class="stat-plus">+</span>
-                </div>
-                <div class="stat-label">TECHNOLOGIES</div>
-              </div>
-
-              <div class="stat-card card-glass card-hover">
-                <div class="stat-number"><span class="counter" data-target="2">0</span></div>
-                <div class="stat-label">INTERNSHIPS</div>
-              </div>
-
-              <div class="stat-card card-glass card-hover">
-                <div class="stat-number"><span class="counter" data-target="15">0</span><span class="stat-plus">+</span>
-                </div>
-                <div class="stat-label">CERTIFICATIONS</div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- 6. THE BIGGER VISION — CYBER BLACK WORLD & CTA -->
-          <div class="about-block ecosystem-block reveal-up">
-            <div class="section-header text-center">
-              <span class="section-label">THE FUTURE</span>
-              <h3 class="section-title">The Bigger Vision — <span class="text-gradient">Cyber Black World</span></h3>
-              <p class="section-subtitle">Building an AI-powered cybersecurity ecosystem for a safer digital future.</p>
-            </div>
-
-            <div class="ecosystem-card card-glass">
-              <div class="ecosystem-intro text-center">
-                <p>
-                  Cyber Black World is my long-term vision for an AI-powered cybersecurity ecosystem designed to bring
-                  security technologies, intelligent automation, threat intelligence, and defensive capabilities
-                  together.
+                <h4 class="work-step-title">Learn: Understand Before Applying</h4>
+                <p class="work-step-desc">
+                  I focus on understanding the concepts, workflows, and problems behind a technology before applying them in practical work.
                 </p>
               </div>
 
-              <!-- Visual Ecosystem Diagram -->
-              <div class="ecosystem-diagram-container">
-                <div class="eco-node eco-node--root">
-                  <i data-lucide="zap" class="eco-icon text-accent"></i>
-                  <span class="eco-title">CYBER BLACK WORLD</span>
+              <!-- 02 — Build -->
+              <div class="work-step-card card-glass card-hover" data-step="2">
+                <div class="work-step-top">
+                  <span class="work-step-number">02</span>
                 </div>
-
-                <div class="eco-branches-wrapper">
-                  <div class="eco-branch-line"></div>
-                  <div class="eco-branches-grid">
-                    <div class="eco-node eco-node--branch">
-                      <i data-lucide="cpu" class="eco-icon text-cyan"></i>
-                      <span>AI SECURITY</span>
-                    </div>
-                    <div class="eco-node eco-node--branch">
-                      <i data-lucide="activity" class="eco-icon text-blue"></i>
-                      <span>SOC OPERATIONS</span>
-                    </div>
-                    <div class="eco-node eco-node--branch">
-                      <i data-lucide="shield-alert" class="eco-icon text-purple"></i>
-                      <span>THREAT INTEL</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="eco-down-line"></div>
-
-                <div class="eco-node eco-node--hub">
-                  <i data-lucide="shield-check" class="eco-icon text-primary"></i>
-                  <span class="eco-title">CYBER DEFENSE</span>
-                </div>
-
-                <div class="eco-down-line"></div>
-
-                <div class="eco-node eco-node--goal">
-                  <i data-lucide="globe" class="eco-icon text-gradient"></i>
-                  <span class="eco-title text-gradient">SAFER DIGITAL FUTURE</span>
-                </div>
+                <h4 class="work-step-title">Build: Turn Ideas into Projects</h4>
+                <p class="work-step-desc">
+                  I explore ideas, plan solutions, and use development tools and AI assistance to turn concepts into practical project implementations.
+                </p>
               </div>
 
-              <!-- Closing CTA Buttons -->
-              <div class="cta-buttons-wrapper text-center mt-4">
-                <a href="#projects" class="btn btn-primary btn-glow">
-                  <i data-lucide="folder-git-2"></i>
-                  <span>Explore My Projects</span>
-                </a>
-                <a href="#experience" class="btn btn-secondary">
-                  <i data-lucide="briefcase"></i>
-                  <span>View My Experience</span>
-                </a>
-                <a href="#contact" class="btn btn-contact">
-                  <i data-lucide="send"></i>
-                  <span>Let's Connect</span>
-                </a>
+              <!-- 03 — Secure -->
+              <div class="work-step-card card-glass card-hover" data-step="3">
+                <div class="work-step-top">
+                  <span class="work-step-number">03</span>
+                </div>
+                <h4 class="work-step-title">Secure: Think About Security and Privacy</h4>
+                <p class="work-step-desc">
+                  With my interest in cybersecurity, I aim to consider security, privacy, and responsible technology practices when exploring systems and product ideas.
+                </p>
               </div>
 
+              <!-- 04 — Improve -->
+              <div class="work-step-card card-glass card-hover" data-step="4">
+                <div class="work-step-top">
+                  <span class="work-step-number">04</span>
+                </div>
+                <h4 class="work-step-title">Improve: Test, Reflect, and Refine</h4>
+                <p class="work-step-desc">
+                  I treat mistakes and challenges as learning opportunities. I review my work, identify gaps, and look for ways to improve the solution.
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 5. THE BIGGER VISION (Strictly Text Only - Left Aligned) -->
+          <div class="about-vision-text-section vision-scroll-block">
+            <div class="section-header">
+              <span class="section-subtitle">THE BIGGER VISION</span>
+              <h3 class="section-title">Cyber Black World</h3>
+              <p class="section-description">A Long-Term Vision for a Safer Digital World</p>
+            </div>
+
+            <div class="vision-content-left">
+              <p>
+                Cyber Black World (CBW) is my long-term vision to explore and build accessible, intelligent, and privacy-conscious cybersecurity technology.
+              </p>
+              <p>
+                One initiative within this vision is Cyber Black Sword (CBS), a cybersecurity product concept focused on making digital protection, security analysis, and assistance more accessible to everyday users.
+              </p>
+              <p>
+                I'm working toward this vision step by step — learning, researching problems, exploring system designs, and developing projects that help me move from ideas toward practical solutions.
+              </p>
+              <p>
+                I don't see Cyber Black World as just a name or a single product. I see it as a long-term journey of learning, experimentation, and building technology with purpose.
+              </p>
+
+              <div class="vision-quote-callout">
+                <p>"Make technology more secure, more accessible, and more useful for everyone."</p>
+              </div>
             </div>
           </div>
 
@@ -739,6 +758,146 @@
 
   </div>
 
+  <!-- Inline Timeline & Section Scroll Animation Engine (CORS & file:/// Protocol Safe) -->
+  <script>
+    (function () {
+      if (typeof window === 'undefined') return;
+
+      var hasReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (hasReducedMotion) return;
+
+      // Enable scroll-in animations
+      document.documentElement.classList.add('js-timeline-animations');
+
+      function initScrollAnimations() {
+        var targets = document.querySelectorAll(
+          '.journey-reveal-header, .journey-milestone, .work-reveal-header, .work-step-card, .vision-scroll-block'
+        );
+        if (!targets.length) return;
+
+        if (!('IntersectionObserver' in window)) {
+          document.documentElement.classList.remove('js-timeline-animations');
+          return;
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            var el = entry.target;
+            if (entry.isIntersecting) {
+              if (el.classList.contains('work-step-card')) {
+                var stepIndex = parseInt(el.getAttribute('data-step') || '1', 10);
+                el.style.transitionDelay = ((stepIndex - 1) * 90) + 'ms';
+              }
+              el.classList.add('is-revealed');
+            } else {
+              el.classList.remove('is-revealed');
+              if (el.classList.contains('work-step-card')) {
+                el.style.transitionDelay = '0ms';
+              }
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        targets.forEach(function (el) {
+          observer.observe(el);
+        });
+
+        // Real-Time Center Timeline Scroll Progress Engine
+        var spineTrack = document.querySelector('.journey-spine-track');
+        var spineProgress = document.querySelector('.journey-spine-progress');
+        var movingDot = document.querySelector('.journey-moving-dot');
+        var milestones = document.querySelectorAll('.journey-milestone');
+
+        if (!spineTrack || !spineProgress || !movingDot) return;
+
+        var ticking = false;
+
+        function updateTimelineProgress() {
+          ticking = false;
+          var container = document.querySelector('.journey-timeline-container');
+          var milestones = document.querySelectorAll('.journey-milestone');
+          if (!container || !milestones.length || !spineTrack || !spineProgress || !movingDot) return;
+
+          var firstMilestone = milestones[0];
+          var lastMilestone = milestones[milestones.length - 1];
+          var firstNode = firstMilestone.querySelector('.milestone-node');
+          var lastNode = lastMilestone.querySelector('.milestone-node');
+
+          if (!firstNode || !lastNode) return;
+
+          var containerRect = container.getBoundingClientRect();
+          var firstNodeRect = firstNode.getBoundingClientRect();
+          var lastNodeRect = lastNode.getBoundingClientRect();
+
+          var firstNodeCenterY = firstNodeRect.top + firstNodeRect.height / 2;
+          var lastNodeCenterY = lastNodeRect.top + lastNodeRect.height / 2;
+
+          // Track start & total height relative to container
+          var trackStart = firstNodeCenterY - containerRect.top;
+          var totalTrackHeight = lastNodeCenterY - firstNodeCenterY;
+
+          if (totalTrackHeight <= 0) return;
+
+          // Align spine track and base of moving dot precisely to Node 1 and Node 7
+          spineTrack.style.top = trackStart + 'px';
+          spineTrack.style.height = totalTrackHeight + 'px';
+          spineTrack.style.bottom = 'auto';
+
+          movingDot.style.top = trackStart + 'px';
+
+          // Eye focal point in viewport (52% from top)
+          var focalPoint = window.innerHeight * 0.52;
+
+          // Continuous progress clamped [0, 1] between Node 1 and Node 7
+          var progress = (focalPoint - firstNodeCenterY) / totalTrackHeight;
+          if (progress < 0) progress = 0;
+          if (progress > 1) progress = 1;
+
+          var filledHeight = progress * totalTrackHeight;
+
+          // Update active track and moving dot instantly without CSS transition lag
+          spineProgress.style.height = filledHeight + 'px';
+          movingDot.style.transform = 'translate(-50%, -50%) translateY(' + filledHeight + 'px)';
+
+          // Synchronize milestone nodes activation
+          milestones.forEach(function (milestone) {
+            var node = milestone.querySelector('.milestone-node');
+            if (!node) return;
+            var nodeRect = node.getBoundingClientRect();
+            var nodeCenter = nodeRect.top + nodeRect.height / 2;
+
+            if (focalPoint >= nodeCenter - 4) {
+              milestone.classList.add('is-active');
+              node.classList.add('is-active');
+            } else {
+              milestone.classList.remove('is-active');
+              node.classList.remove('is-active');
+            }
+          });
+        }
+
+        function onScroll() {
+          if (!ticking) {
+            requestAnimationFrame(updateTimelineProgress);
+            ticking = true;
+          }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
+        updateTimelineProgress();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollAnimations);
+      } else {
+        initScrollAnimations();
+      }
+    })();
+  </script>
 </body>
 
 </html>
