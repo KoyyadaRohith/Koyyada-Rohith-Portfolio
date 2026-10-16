@@ -53,6 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Animation (Scroll, Particles, GSAP)
   animationManager.init();
 
+  // Initialize Stat Counter Animation (BY THE NUMBERS)
+  initStatCounters();
+
   // Trigger Lucide Icon Replacement
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
@@ -63,3 +66,36 @@ document.addEventListener('DOMContentLoaded', () => {
     dom.addClass(dom.body, 'loaded');
   }, 100);
 });
+
+function initStatCounters() {
+  const counters = document.querySelectorAll('.counter');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = parseInt(entry.target.getAttribute('data-target') || '0', 10);
+        let start = 0;
+        const duration = 1600; // ms
+        const stepTime = 16;
+        const steps = duration / stepTime;
+        const increment = target / steps;
+
+        const updateCount = () => {
+          start += increment;
+          if (start >= target) {
+            entry.target.textContent = target;
+          } else {
+            entry.target.textContent = Math.ceil(start);
+            requestAnimationFrame(updateCount);
+          }
+        };
+
+        updateCount();
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  counters.forEach(counter => observer.observe(counter));
+}

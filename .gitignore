@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Local tools & agents
+gstack/
+
+# System and environment files
+.env
+.env.local
+.DS_Store
+Thumbs.db

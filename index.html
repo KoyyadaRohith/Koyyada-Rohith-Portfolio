@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio Project</title>
+  <title>Koyyada Rohith Portfolio</title>
 
   <!-- SEO & Metadata -->
   <meta name="description"
@@ -45,7 +45,7 @@
 
   <!-- Inline Theme Initialization & Fail-Safe Toggle -->
   <script>
-    (function() {
+    (function () {
       try {
         var saved = localStorage.getItem('portfolio-theme');
         var theme = saved ? JSON.parse(saved) : 'dark';
@@ -54,7 +54,7 @@
         } else {
           document.documentElement.setAttribute('data-theme', 'dark');
         }
-      } catch(e) {
+      } catch (e) {
         document.documentElement.setAttribute('data-theme', 'dark');
       }
     })();
@@ -66,10 +66,10 @@
       html.setAttribute('data-theme', next);
       try {
         localStorage.setItem('portfolio-theme', JSON.stringify(next));
-      } catch(e) {}
+      } catch (e) { }
 
       var btns = document.querySelectorAll('.theme-switch-btn');
-      btns.forEach(function(btn) {
+      btns.forEach(function (btn) {
         if (next === 'light') {
           btn.setAttribute('title', 'Switch to Dark Theme');
           btn.setAttribute('aria-label', 'Switch to Dark Theme');
@@ -149,7 +149,13 @@
         <div class="nav-actions">
           <!-- Theme Switcher Button -->
           <button class="theme-switch-btn" onclick="toggleTheme()" aria-label="Toggle Theme" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <path
+                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42">
+              </path>
+            </svg>
           </button>
 
           <!-- Resume Button -->
@@ -252,7 +258,8 @@
                 security, threat intelligence, and AI-driven security.
               </p>
               <p class="hero-subtitle" style="margin-bottom: 0;">
-                Through internships, hands-on labs, certifications, and real-world projects, I continuously strengthen my
+                Through internships, hands-on labs, certifications, and real-world projects, I continuously strengthen
+                my
                 technical expertise while building Cyber Black World an AI-powered cybersecurity ecosystem dedicated to
                 creating innovative solutions for a safer digital future.
               </p>
@@ -280,26 +287,51 @@
               <!-- LinkedIn -->
               <a href="https://www.linkedin.com/in/koyyada-rohith-72bb82372/" class="social-link"
                 aria-label="LinkedIn Profile" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
               </a>
               <!-- GitHub -->
               <a href="https://github.com/KoyyadaRohith" class="social-link" aria-label="GitHub Profile" title="GitHub"
                 target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                  </path>
+                  <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                </svg>
               </a>
               <!-- Instagram -->
               <a href="https://www.instagram.com/mr_rohith_43/" class="social-link" aria-label="Instagram Profile"
                 title="Instagram" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
               </a>
               <!-- X (Twitter) -->
               <a href="https://x.com/Mr_Rohith43" class="social-link" aria-label="X (Twitter) Profile"
                 title="X (Twitter)" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+                  </path>
+                </svg>
               </a>
               <!-- Mail Box -->
               <a href="mailto:koyyadarohith43@gmail.com" class="social-link" aria-label="Send Email" title="Mail Box">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
               </a>
             </div>
           </div>
@@ -307,54 +339,84 @@
           <!-- Right Column Visual (Avatar Logo + Dual-Orbit Rotating Badges) -->
           <div class="hero-visual reveal-fade-left">
             <div class="visual-container">
-              
+
               <!-- Center Raw Image Logo (Remains 100% Still & Undisturbed) -->
               <div class="avatar-frame">
-                <img src="assets/profile/portrait.jpg" alt="Koyyada Rohith - Cybersecurity Engineer" class="avatar-img" />
+                <img src="assets/profile/portrait.jpg" alt="Koyyada Rohith - Cybersecurity Engineer"
+                  class="avatar-img" />
               </div>
 
-              <!-- Outer Orbit Ring (Counter-Clockwise: Right to Left) with 3 Labels at 120deg Equal Gaps -->
+              <!-- Inner Ambient Glow Ring -->
+              <div class="orbit-ring orbit-inner"></div>
+
+              <!-- Outer Orbit Ring with 5 Star-Positioned Labels (72deg Pentagram Spacing) -->
               <div class="orbit-ring orbit-outer">
-                <!-- 1. Threat Intelligence (0deg / Top) -->
-                <div class="badge-slot slot-top">
+                <!-- 1. Star Point 1 (0deg / Top) -->
+                <div class="badge-slot slot-star-1">
                   <div class="tech-badge badge-ccw">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
                     <span>Threat Intelligence</span>
                   </div>
                 </div>
 
-                <!-- 2. AI Security (120deg / Bottom Right) -->
-                <div class="badge-slot slot-bottom-right">
+                <!-- 2. Star Point 2 (72deg / Top-Right) -->
+                <div class="badge-slot slot-star-2">
                   <div class="tech-badge badge-ccw">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="15" x2="23" y2="15"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="15" x2="4" y2="15"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                      <rect x="9" y="9" width="6" height="6"></rect>
+                      <line x1="9" y1="1" x2="9" y2="4"></line>
+                      <line x1="15" y1="1" x2="15" y2="4"></line>
+                      <line x1="9" y1="20" x2="9" y2="23"></line>
+                      <line x1="15" y1="20" x2="15" y2="23"></line>
+                      <line x1="20" y1="9" x2="23" y2="9"></line>
+                      <line x1="20" y1="15" x2="23" y2="15"></line>
+                      <line x1="1" y1="9" x2="4" y2="9"></line>
+                      <line x1="1" y1="15" x2="4" y2="15"></line>
+                    </svg>
                     <span>AI Security</span>
                   </div>
                 </div>
 
-                <!-- 3. Security Innovation (240deg / Bottom Left) -->
-                <div class="badge-slot slot-bottom-left">
+                <!-- 3. Star Point 3 (144deg / Bottom-Right) -->
+                <div class="badge-slot slot-star-3">
                   <div class="tech-badge badge-ccw">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 18h6"></path>
+                      <path d="M10 22h4"></path>
+                      <path
+                        d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14">
+                      </path>
+                    </svg>
                     <span>Security Innovation</span>
                   </div>
                 </div>
-              </div>
 
-              <!-- Inner Orbit Ring (Clockwise: Left to Right) with 2 Labels at 180deg Equal Gaps -->
-              <div class="orbit-ring orbit-inner">
-                <!-- 4. Network Security (180deg / Left) -->
-                <div class="badge-slot slot-left">
-                  <div class="tech-badge badge-cw">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    <span>Network Security</span>
+                <!-- 4. Star Point 4 (216deg / Bottom-Left) -->
+                <div class="badge-slot slot-star-4">
+                  <div class="tech-badge badge-ccw">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                    <span>Cyber Black World</span>
                   </div>
                 </div>
 
-                <!-- 5. Cyber Black World (0deg / Right) -->
-                <div class="badge-slot slot-right">
-                  <div class="tech-badge badge-cw">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                    <span>Cyber Black World</span>
+                <!-- 5. Star Point 5 (288deg / Top-Left) -->
+                <div class="badge-slot slot-star-5">
+                  <div class="tech-badge badge-ccw">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    <span>Network Security</span>
                   </div>
                 </div>
               </div>
@@ -363,13 +425,313 @@
           </div>
 
         </div>
+      </section>
 
-        <!-- Scroll Indicator -->
-        <div class="hero-scroll-wrapper">
-          <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
-            <span class="font-secondary text-xs uppercase tracking-widest text-muted">Scroll</span>
-            <i data-lucide="chevron-down" class="text-primary mt-1"></i>
-          </a>
+      <!-- ==========================================================================
+           2. ABOUT SECTION (Streamlined Core Experience)
+           ========================================================================== -->
+      <section id="about" class="section about-section">
+        <div class="container">
+
+          <!-- Section Header (Left Aligned) -->
+          <div class="section-header reveal-up">
+            <span class="section-subtitle">ABOUT ME</span>
+            <h2 class="section-title">About The Founder</h2>
+            <p class="section-description">From curiosity about technology to understanding cybersecurity, from hands-on
+              learning to building practical solutions, and from a personal vision to the foundation of Cyber Black
+              World.</p>
+          </div>
+
+          <!-- 1. OPENING STORY (Portrait & Core Narrative) -->
+          <div class="about-opening-grid">
+            <!-- Left Column: Portrait Container -->
+            <div class="about-portrait-wrapper reveal-fade-right">
+              <div class="portrait-container">
+                <div class="portrait-glow-ring"></div>
+                <div class="portrait-corner-ring corner-top-right"></div>
+                <div class="portrait-corner-ring corner-bottom-left"></div>
+                <div class="portrait-frame">
+                  <img src="assets/profile/about_portrait.jpg" alt="Koyyada Rohith" class="about-portrait-img"
+                    loading="lazy" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Opening Narrative -->
+            <div class="about-opening-content reveal-fade-left">
+              <h2 class="about-opening-title">From Curiosity to Cyber Black World</h2>
+              <p class="about-lead-text">
+                My journey began with a curiosity about computers and technology, which gradually evolved into a passion
+                for cybersecurity, software development, and innovation. Every step has been an opportunity to learn,
+                build, and grow through academics, certifications, internships, and real-world projects.
+              </p>
+              <p class="about-body-text">
+                Today, I am working toward my vision of building <strong>Cyber Black World</strong> - an AI-powered
+                cybersecurity ecosystem dedicated to creating a safer and more secure digital future.
+              </p>
+            </div>
+          </div>
+
+
+          <!-- 2. MY MISSION & MY VISION -->
+          <div class="about-block mission-vision-grid reveal-up">
+            <!-- My Mission -->
+            <div class="mission-card card-glass card-hover">
+              <div class="card-badge-header">
+                <div class="card-icon-box icon-cyan">
+                  <i data-lucide="target" class="icon-svg"></i>
+                </div>
+                <h4>My Mission</h4>
+              </div>
+              <div class="card-body-text">
+                <p>
+                  My mission is to develop practical cybersecurity solutions that combine security engineering,
+                  automation, artificial intelligence, and real-world problem solving.
+                </p>
+                <p>
+                  I aim to move beyond simply understanding cybersecurity concepts and focus on building technologies
+                  that contribute to a safer digital environment.
+                </p>
+              </div>
+            </div>
+
+            <!-- My Vision -->
+            <div class="vision-card card-glass card-hover">
+              <div class="card-badge-header">
+                <div class="card-icon-box icon-purple">
+                  <i data-lucide="zap" class="icon-svg"></i>
+                </div>
+                <h4>My Vision</h4>
+              </div>
+              <div class="card-body-text">
+                <p>
+                  My long-term vision is to build Cyber Black World as an AI-powered cybersecurity ecosystem bringing
+                  together security operations, threat intelligence, network defense, and intelligent security
+                  technologies.
+                </p>
+                <p>
+                  The goal is to create a future where cybersecurity is proactive, intelligent, adaptive, and
+                  accessible.
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 3. ENGINEERING PHILOSOPHY -->
+          <div class="about-block philosophy-block reveal-up">
+            <div class="section-header text-center">
+              <span class="section-label">HOW I BUILD</span>
+              <h3 class="section-title">Engineering Philosophy</h3>
+            </div>
+
+            <div class="philosophy-grid">
+              <div class="philosophy-card card-glass card-hover">
+                <div class="philosophy-icon"><i data-lucide="book-open"></i></div>
+                <h5>LEARN</h5>
+                <p>Build a strong foundation through continuous learning and practical exploration.</p>
+              </div>
+
+              <div class="philosophy-card card-glass card-hover">
+                <div class="philosophy-icon"><i data-lucide="code-2"></i></div>
+                <h5>BUILD</h5>
+                <p>Convert concepts and ideas into functional projects and real-world solutions.</p>
+              </div>
+
+              <div class="philosophy-card card-glass card-hover">
+                <div class="philosophy-icon"><i data-lucide="shield-check"></i></div>
+                <h5>SECURE</h5>
+                <p>Design systems with security as a fundamental requirement rather than an afterthought.</p>
+              </div>
+
+              <div class="philosophy-card card-glass card-hover">
+                <div class="philosophy-icon"><i data-lucide="cpu"></i></div>
+                <h5>INNOVATE</h5>
+                <p>Explore AI, automation, and emerging technologies to approach cybersecurity differently.</p>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 4. MY JOURNEY (Timeline) -->
+          <div class="about-block timeline-block reveal-up">
+            <div class="section-header text-center">
+              <span class="section-label">MILESTONES</span>
+              <h3 class="section-title">My Journey</h3>
+              <p class="section-subtitle">A continuous journey from curiosity to building.</p>
+            </div>
+
+            <div class="about-timeline">
+              <div class="timeline-line"></div>
+
+              <div class="timeline-item timeline-item--left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content card-glass">
+                  <span class="timeline-year">2021</span>
+                  <h4 class="timeline-title">THE BEGINNING</h4>
+                  <p class="timeline-desc">Initial curiosity about computers, technology, and digital systems.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item timeline-item--right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content card-glass">
+                  <span class="timeline-year">2022</span>
+                  <h4 class="timeline-title">EXPLORING TECHNOLOGY</h4>
+                  <p class="timeline-desc">Deeper interest in programming, software, and computer science concepts.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item timeline-item--left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content card-glass">
+                  <span class="timeline-year">2023</span>
+                  <h4 class="timeline-title">ENTERING CYBERSECURITY</h4>
+                  <p class="timeline-desc">Focusing on security concepts, network defense, and threat analysis.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item timeline-item--right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content card-glass">
+                  <span class="timeline-year">2024</span>
+                  <h4 class="timeline-title">PRACTICAL APPLICATION</h4>
+                  <p class="timeline-desc">Connecting academic knowledge with practical technical projects.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item timeline-item--left">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content card-glass">
+                  <span class="timeline-year">2025</span>
+                  <h4 class="timeline-title">BUILDING & EXPANDING</h4>
+                  <p class="timeline-desc">Gaining practical experience through projects, internships, and
+                    certifications.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item timeline-item--right">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content card-glass timeline-highlight">
+                  <span class="timeline-year text-gradient">2026</span>
+                  <h4 class="timeline-title">BUILDING CYBER BLACK WORLD</h4>
+                  <p class="timeline-desc">Working toward the vision of an AI-powered cybersecurity ecosystem.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- 5. BY THE NUMBERS (Stats Grid) -->
+          <div class="about-block stats-block reveal-up">
+            <div class="section-header text-center">
+              <span class="section-label">BY THE NUMBERS</span>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-card card-glass card-hover">
+                <div class="stat-number"><span class="counter" data-target="17">0</span><span class="stat-plus">+</span>
+                </div>
+                <div class="stat-label">PROJECTS</div>
+              </div>
+
+              <div class="stat-card card-glass card-hover">
+                <div class="stat-number"><span class="counter" data-target="35">0</span><span class="stat-plus">+</span>
+                </div>
+                <div class="stat-label">TECHNOLOGIES</div>
+              </div>
+
+              <div class="stat-card card-glass card-hover">
+                <div class="stat-number"><span class="counter" data-target="2">0</span></div>
+                <div class="stat-label">INTERNSHIPS</div>
+              </div>
+
+              <div class="stat-card card-glass card-hover">
+                <div class="stat-number"><span class="counter" data-target="15">0</span><span class="stat-plus">+</span>
+                </div>
+                <div class="stat-label">CERTIFICATIONS</div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- 6. THE BIGGER VISION — CYBER BLACK WORLD & CTA -->
+          <div class="about-block ecosystem-block reveal-up">
+            <div class="section-header text-center">
+              <span class="section-label">THE FUTURE</span>
+              <h3 class="section-title">The Bigger Vision — <span class="text-gradient">Cyber Black World</span></h3>
+              <p class="section-subtitle">Building an AI-powered cybersecurity ecosystem for a safer digital future.</p>
+            </div>
+
+            <div class="ecosystem-card card-glass">
+              <div class="ecosystem-intro text-center">
+                <p>
+                  Cyber Black World is my long-term vision for an AI-powered cybersecurity ecosystem designed to bring
+                  security technologies, intelligent automation, threat intelligence, and defensive capabilities
+                  together.
+                </p>
+              </div>
+
+              <!-- Visual Ecosystem Diagram -->
+              <div class="ecosystem-diagram-container">
+                <div class="eco-node eco-node--root">
+                  <i data-lucide="zap" class="eco-icon text-accent"></i>
+                  <span class="eco-title">CYBER BLACK WORLD</span>
+                </div>
+
+                <div class="eco-branches-wrapper">
+                  <div class="eco-branch-line"></div>
+                  <div class="eco-branches-grid">
+                    <div class="eco-node eco-node--branch">
+                      <i data-lucide="cpu" class="eco-icon text-cyan"></i>
+                      <span>AI SECURITY</span>
+                    </div>
+                    <div class="eco-node eco-node--branch">
+                      <i data-lucide="activity" class="eco-icon text-blue"></i>
+                      <span>SOC OPERATIONS</span>
+                    </div>
+                    <div class="eco-node eco-node--branch">
+                      <i data-lucide="shield-alert" class="eco-icon text-purple"></i>
+                      <span>THREAT INTEL</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="eco-down-line"></div>
+
+                <div class="eco-node eco-node--hub">
+                  <i data-lucide="shield-check" class="eco-icon text-primary"></i>
+                  <span class="eco-title">CYBER DEFENSE</span>
+                </div>
+
+                <div class="eco-down-line"></div>
+
+                <div class="eco-node eco-node--goal">
+                  <i data-lucide="globe" class="eco-icon text-gradient"></i>
+                  <span class="eco-title text-gradient">SAFER DIGITAL FUTURE</span>
+                </div>
+              </div>
+
+              <!-- Closing CTA Buttons -->
+              <div class="cta-buttons-wrapper text-center mt-4">
+                <a href="#projects" class="btn btn-primary btn-glow">
+                  <i data-lucide="folder-git-2"></i>
+                  <span>Explore My Projects</span>
+                </a>
+                <a href="#experience" class="btn btn-secondary">
+                  <i data-lucide="briefcase"></i>
+                  <span>View My Experience</span>
+                </a>
+                <a href="#contact" class="btn btn-contact">
+                  <i data-lucide="send"></i>
+                  <span>Let's Connect</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </section>
 
